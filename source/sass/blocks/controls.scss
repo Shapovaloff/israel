@@ -1,0 +1,106 @@
+.controls {
+  @include reset-list;
+  width: 228px;
+}
+
+.controls__item {
+  position: relative;
+  margin-bottom: 4px;
+
+  &--active {
+    width: 100%;
+    background-image: url("../../img/rectangle.svg"), $gradient;
+    background-size: 100% 100%, 85% 100%;
+    background-repeat: no-repeat;
+
+    &::after {
+      background-position-y: 0;
+    }
+  }
+}
+
+.controls__item--active .controls__button {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  text-transform: lowercase;
+  font-variant: small-caps;
+  color: #ffffff;
+  text-shadow: $text-shadow;
+  opacity: 1;
+
+  &::after {
+    background-position-y: 0;
+  }
+
+  &--business::after {
+    background-position-y: -5px;
+  }
+
+  &--volonteur::after {
+    background-position-y: -4px;
+  }
+
+  &--religion::after {
+    background-position-y: -6px;
+  }
+}
+
+.controls__button {
+  position: relative;
+  min-height: 68px;
+  width: 100%;
+  padding: 23px 10px 25px 72px;
+  font: inherit;
+  line-height: 18px;
+  border: none;
+  background-color: transparent;
+  text-align: left;
+  opacity: 0.87;
+  cursor: pointer;
+  outline: none;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-image: url("../../img/sprite-icon@1x.png");
+    background-repeat: no-repeat;
+  }
+
+  &--culture::after {
+    width: 28px;
+    height: 33px;
+    left: 24px;
+    background-position: 0 -44px;
+  }
+
+  &--study::after {
+    width: 36px;
+    height: 35px;
+    left: 20px;
+    background-position: -44px -44px;
+  }
+
+  &--business::after {
+    width: 32px;
+    height: 25px;
+    left: 21px;
+    background-position: -96px -49px;
+  }
+
+  &--volonteur::after {
+    width: 32px;
+    height: 29px;
+    left: 21px;
+    background-position: -143px -46px;
+  }
+
+  &--religion::after {
+    width: 27px;
+    height: 25px;
+    left: 21px;
+    background-position: -188px -50px;
+  }
+}
