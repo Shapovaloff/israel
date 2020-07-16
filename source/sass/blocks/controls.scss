@@ -9,40 +9,13 @@
 
   &--active {
     width: 100%;
-    background-image: url("../../img/rectangle.svg"), $gradient;
+    background-image: url("../img/rectangle.svg"), $gradient;
     background-size: 100% 100%, 85% 100%;
     background-repeat: no-repeat;
 
     &::after {
       background-position-y: 0;
     }
-  }
-}
-
-.controls__item--active .controls__button {
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 19px;
-  text-transform: lowercase;
-  font-variant: small-caps;
-  color: #ffffff;
-  text-shadow: $text-shadow;
-  opacity: 1;
-
-  &::after {
-    background-position-y: 0;
-  }
-
-  &--business::after {
-    background-position-y: -5px;
-  }
-
-  &--volonteur::after {
-    background-position-y: -4px;
-  }
-
-  &--religion::after {
-    background-position-y: -6px;
   }
 }
 
@@ -65,7 +38,7 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-image: url("../../img/sprite-icon@1x.png");
+    background-image: url("../img/sprite-icon@1x.png");
     background-repeat: no-repeat;
   }
 
@@ -102,5 +75,32 @@
     height: 25px;
     left: 21px;
     background-position: -188px -50px;
+  }
+}
+
+.controls__item--active .controls__button {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  text-transform: lowercase;
+  font-variant: small-caps;
+  color: #ffffff;
+  text-shadow: $text-shadow;
+  opacity: 1;
+
+  &::after {
+    background-position-y: 0;
+  }
+
+  &--business::after {
+    background-position-y: -5px;
+  }
+
+  &--volonteur::after {
+    background-position-y: -4px;
+  }
+
+  &--religion::after {
+    background-position-y: -6px;
   }
 }
