@@ -1,0 +1,95 @@
+.about {
+  min-height: 764px;
+  background-image: url("../img/about-programs-watercolor.png");
+  background-repeat: no-repeat;
+  background-size: 1366px 604px;
+  background-position: center 160px;
+}
+
+.about__title {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.about__description {
+  width: 700px;
+  padding: 0;
+  margin: 0 auto;
+  margin-top: 24px;
+  font-size: 17px;
+  line-height: 29px;
+  text-align: center;
+}
+
+.about__video {
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  margin-top: 50px;
+  width: 870px;
+}
+
+.about__video-img {
+  display: block;
+  width: 100%;
+}
+
+.about__button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 96px;
+  height: 96px;
+  transform: translate(-50%, -55%);
+  cursor: pointer;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    opacity: 0.32;
+    top: 0;
+    left: 0;
+    background-color: #ffffff;
+    z-index: -1;
+  }
+
+  &::after {
+    width: 65%;
+    height: 65%;
+    opacity: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &:hover::after,
+  &:focus::after {
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.05);
+  }
+
+  &:active::after {
+    background-color: #f4f4f4;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.05);
+  }
+}
+
+.about__button:hover .about__video-btn,
+.about__button:focus .about__video-btn {
+  fill: #63d3fd;
+}
+
+.about__button:active .about__video-btn {
+  fill: #1fc0fc;
+}
+
+.about__video-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-38%, -50%);
+}
