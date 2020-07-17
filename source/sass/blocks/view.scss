@@ -1,0 +1,47 @@
+.view {
+  min-height: 583px;
+  padding-top: 154px;
+  background-image: url("../../img/view-bg-desktop@1x.jpg");
+  background-position: 5px 34px;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.view__wrapper {
+  margin-left: calc(59% - 10px);
+  width: 402px;
+}
+
+.view__title {
+  margin-bottom: 25px;
+}
+
+.view__description {
+  margin: 0;
+  margin-bottom: 48px;
+  padding-left: 4px;
+  font-size: 17px;
+  line-height: 29px;
+  color: #ffffff;
+  opacity: 0.87;
+  text-shadow: $text-shadow;
+}
+
+.view__button {
+  position: relative;
+  padding-left: 72px;
+  text-decoration: none;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 24px;
+    height: 24px;
+    background-image: url("../img/icon-instagram.svg");
+  }
+}
+
+
