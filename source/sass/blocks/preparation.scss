@@ -1,12 +1,25 @@
 .preparation {
   position: relative;
-  min-height: 1068px;
+  min-height: 1028px;
   padding-top: 193px;
-  background-image:
-    url("../img/preparation-bg.jpg"),
-    url("../img/preparation-watercolor.png");
-  background-position: 12px 160px, center -40px;
-  background-repeat: no-repeat, no-repeat;
+  padding-bottom: 209px;
+  background-image: url("../img/preparation-bg.jpg");
+  background-position: 12px 160px;
+  background-repeat: no-repeat;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1366px;
+    height: 1208px;
+    background-image: url("../img/preparation-watercolor.png");
+    background-position: center -40px;
+    background-repeat: no-repeat;
+    z-index: -1;
+  }
 
   &::after {
     content: "";
@@ -115,17 +128,17 @@
 .preparation__content span {
   position: relative;
   display: block;
+  margin-left: 14px;
+  padding-left: 18px;
   line-height: 21px;
   opacity: 0.5;
-  margin-left: 16px;
-  padding-left: 16px;
 
   &::before {
     content: "";
     position: absolute;
     top: 0;
     left: 0;
-    width: 4px;
+    width: 5px;
     height: 100%;
     background-image: $gradient;
   }

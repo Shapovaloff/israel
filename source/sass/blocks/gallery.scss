@@ -1,0 +1,97 @@
+.gallery {
+  position: relative;
+  background-image: url("../img/gallery-watercolor.png");
+  background-position: center -44px;
+  background-repeat: no-repeat;
+  padding-bottom: 96px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 612px;
+    right: 0;
+    width: 97px;
+    height: 148px;
+    background-image: url("../img/gallery-watch.png");
+    background-position: center right;
+    background-repeat: no-repeat;
+  }
+}
+
+.gallery__wrapper {
+  width: 1366px;
+  padding-left: 110px;
+  padding-right: 110px;
+}
+
+.gallery__title {
+  display: block;
+  margin-bottom: 23px;
+  text-align: center;
+}
+
+.gallery__description {
+
+  width: 720px;
+  margin: 0 auto;
+  padding-right: 11px;
+  font-size: 17px;
+  line-height: 29px;
+  text-align: right;
+  opacity: 0.87;
+}
+
+.gallery__list {
+  @include reset-list;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 47px;
+  padding-left: 491px;
+  padding-right: 2px;
+}
+
+.gallery__item {
+  position: relative;
+  margin-bottom: 22px;
+
+  &--excursions {
+    position: absolute;
+    top: -67px;
+    left: -6px;
+  }
+}
+
+.gallery__text {
+  position: absolute;
+  left: 32px;
+  bottom: 40px;
+  width: 80%;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+
+  font-family: $font-raleway;
+  font-weight: 800;
+  font-size: 21px;
+  line-height: 25px;
+  color: #ffffff;
+  text-shadow: $text-shadow;
+
+  &--excursions {
+    left: 40px;
+  }
+
+  &--stady {
+    left: 24px;
+  }
+
+  &--creation {
+    width: 90%;
+  }
+
+  &--development {
+    left: 26px;
+  }
+}
