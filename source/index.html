@@ -18,7 +18,7 @@
         <a href="#" class="page-header__order">заказать звонок</a>
       </nav>
       <h3 class="page-header__text">Учёба, путешествие и карьера<br> для еврейской молодёжи</h3>
-      <button class="page-header__button" aria-label="Перейти на следующую секцию">
+      <button type="button" class="page-header__button" aria-label="Перейти на следующую секцию">
         <svg class="page-header__button-circle" width="76" height="76" viewBox="0 0 76 76" fill="none" xmlns="http://www.w3.org/2000/svg">
           <circle cx="38" cy="38" r="37.5" stroke="white" stroke-dasharray="4 4"/>
         </svg>
@@ -49,19 +49,19 @@
         <div class="programs__columns">
           <ul class="programs__controls controls">
             <li class="controls__item">
-              <button class="controls__button controls__button--culture">Общие</button>
+              <button type="button" class="controls__button controls__button--culture">Общие</button>
             </li>
             <li class="controls__item controls__item--active">
-              <button class="controls__button controls__button--study">Академические</button>
+              <button type="button" class="controls__button controls__button--study">Академические</button>
             </li>
             <li class="controls__item">
-              <button class="controls__button controls__button--business">Стажировки</button>
+              <button type="button" class="controls__button controls__button--business">Стажировки</button>
             </li>
             <li class="controls__item">
-              <button class="controls__button controls__button--volonteur">Волонтёрство</button>
+              <button type="button" class="controls__button controls__button--volonteur">Волонтёрство</button>
             </li>
             <li class="controls__item">
-              <button class="controls__button controls__button--religion">Религиозные</button>
+              <button type="button" class="controls__button controls__button--religion">Религиозные</button>
             </li>
           </ul>
 
@@ -92,6 +92,18 @@
             </li>
           </ul>
         </div>
+      </div>
+    </section>
+
+    <section class="feedback">
+      <div class="feedback__wrapper">
+        <h3 class="title feedback__title">Хочу поехать!</h3>
+        <p class="feedback__text">Оставьте свой телефон и мы свяжемся с вами, подберём куратора и ответим на все вопросы!</p>
+        <form class="feedback__form  form--single-input" action="https://echo.htmlacademy.ru" method="POST">
+          <label for="feedback__tel" class="visually-hidden">Введите номер телефона</label>
+          <input id="feedback__tel" name="tel" maxlength="16" type="tel" pattern="^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$" placeholder="телефон" required="">
+          <button type="submit" class="button feedback__button">перезвоните мне</button>
+        </form>
       </div>
     </section>
   </main>

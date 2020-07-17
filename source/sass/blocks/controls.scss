@@ -12,10 +12,6 @@
     background-image: url("../img/rectangle.svg"), $gradient;
     background-size: 100% 100%, 85% 100%;
     background-repeat: no-repeat;
-
-    &::after {
-      background-position-y: 0;
-    }
   }
 }
 
@@ -60,21 +56,21 @@
     width: 32px;
     height: 25px;
     left: 21px;
-    background-position: -96px -49px;
+    background-position: -96px -44px;
   }
 
   &--volonteur::after {
     width: 32px;
     height: 29px;
     left: 21px;
-    background-position: -143px -46px;
+    background-position: -143px -44px;
   }
 
   &--religion::after {
     width: 27px;
     height: 25px;
     left: 21px;
-    background-position: -188px -50px;
+    background-position: -188px -44px;
   }
 }
 
@@ -91,16 +87,15 @@
   &::after {
     background-position-y: 0;
   }
+}
 
-  &--business::after {
-    background-position-y: -5px;
-  }
+.controls__item:hover:not(.controls__item--active) .controls__button,
+.controls__item:focus:not(.controls__item--active) .controls__button{
+  background: linear-gradient(108.42deg,#ffc341 20.46%,#ffd701 65.31%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 
-  &--volonteur::after {
-    background-position-y: -4px;
-  }
-
-  &--religion::after {
-    background-position-y: -6px;
+  &::after {
+    background-position-y: -87px;
   }
 }
