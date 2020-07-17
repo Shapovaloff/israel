@@ -91,7 +91,7 @@
 
 .controls__item:hover:not(.controls__item--active) .controls__button,
 .controls__item:focus:not(.controls__item--active) .controls__button {
-  background: linear-gradient(108.42deg, #ffc341 20.46%, #ffd701 65.31%);
+  background: $gradient;
   background-clip: text;
   -webkit-text-fill-color: transparent;
 
