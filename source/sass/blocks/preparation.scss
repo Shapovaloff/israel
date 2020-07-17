@@ -1,0 +1,132 @@
+.preparation {
+  position: relative;
+  min-height: 1068px;
+  padding-top: 193px;
+  background-image:
+    url("../img/preparation-bg.jpg"),
+    url("../img/preparation-watercolor.png");
+  background-position: 12px 160px, center -40px;
+  background-repeat: no-repeat, no-repeat;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 370px;
+    right: 0;
+    width: 217px;
+    height: 235px;
+    background-image: url("../img/preparation-stamp.png");
+    background-repeat: no-repeat;
+  }
+}
+
+.preparation__wrapper {
+  margin-left: 50%;
+  width: 552px;
+}
+
+.preparation__content h3 {
+  margin-left: 16px;
+  margin-bottom: 23px;
+}
+
+.preparation__content p {
+  margin-top: 0;
+  margin-left: 16px;
+  margin-bottom: 33px;
+  padding-right: 55px;
+}
+
+.preparation__content b {
+  display: block;
+  margin-left: 16px;
+  margin-bottom: 25px;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 29px;
+}
+
+.preparation__list {
+  @include reset-list;
+  position: relative;
+  margin-bottom: 51px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 20px;
+    left: 17px;
+    width: 4px;
+    height: 90%;
+    background-image: url("../img/line-dashed.svg");
+    background-repeat: repeat-y;
+  }
+}
+
+.preparation__item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-left: 60px;
+  counter-increment: numb;
+  margin-bottom: 38px;
+  min-height: 36px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &::after {
+    content: counter(numb) "";
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 0;
+    top: 0;
+    width: 36px;
+    height: 36px;
+    font: inherit;
+    font-weight: 700;
+    font-size: 17px;
+    line-height: 29px;
+    color: #ffc341;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+  }
+}
+
+.preparation__item p {
+  margin: 0;
+  line-height: 21px;
+  opacity: 0.87;
+}
+
+.preparation__content span {
+  position: relative;
+  display: block;
+  line-height: 21px;
+  opacity: 0.5;
+  margin-left: 16px;
+  padding-left: 16px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background-image: $gradient;
+  }
+}

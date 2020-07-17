@@ -1,6 +1,6 @@
 .feedback {
   position: relative;
-  min-height: 818px;
+  min-height: 594px;
   background-image: url("../img/feedback-bgdesktop@1x.jpg");
   background-repeat: no-repeat;
   background-position: top right;
@@ -23,7 +23,6 @@
 }
 
 .feedback__title {
-  margin: 0;
   margin-right: 50%;
   padding-top: 210px;
 }
@@ -51,7 +50,7 @@
   border-radius: 80px;
   background-color: transparent;
   outline: none;
-  border: 2px solid #E3E3E3;
+  border: 2px solid #e3e3e3;
   font: inherit;
   font-weight: 500;
   font-size: 17px;
