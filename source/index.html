@@ -8,6 +8,10 @@
   <link rel="stylesheet" href="css/style.min.css">
 </head>
 <body>
+  <div style="display: none">
+    <include src="build/img/sprite_auto.svg"></include>
+  </div>
+
   <header class="page-header">
     <div class="page-header__wrapper container">
       <nav class="page-header__nav">
@@ -165,7 +169,12 @@
       <div class="view__wrapper">
         <h3 class="title view__title">#masaisrael</h3>
         <p class="view__description">Познакомьтесь с программой  от первого лица! Многие участники ведут блоги и фотодневники о жизни, учёбе и путешествиях в Израиле.</p>
-        <a class="button view__button" href="#" aria-label="Ссылка на инстраграмм">смотреть фото</a>
+        <a class="button view__button" href="#" aria-label="Ссылка на инстраграмм">
+          <svg class="view__icon" width="24" height="24">
+            <use xlink:href="#icon-instagram"></use>
+          </svg>
+          смотреть фото
+        </a>
       </div>
     </section>
 
@@ -229,6 +238,64 @@
               </button>
             </li>
           </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="reviews">
+      <div class="reviews__wrapper">
+        <h3 class="title reviews__title">отзывы</h3>
+        <ul class="reviews__list">
+          <li class="reviews__item">
+            <svg class="reviews__photo" width="364" height="480" viewBox="0 0 364 480" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <mask id="mask-1">
+                  <image width="364" height="480" xlink:href="./img/reviews-mask@1x.png"></image>
+                </mask>
+              </defs>
+              <image xlink:href="./img/reviews-photo@1x.jpg" mask="url(#mask-1)"></image>
+            </svg>
+            <div class="reviews__content">
+              <h4>Ольга Михайлова</h4>
+              <p><span>Программа:</span> Арт‑Тель, февраль‑сентябрь 2017</p>
+              <p>Долго выбирая программу, на которую ехать - я определилась, взяла на 5 месяцев «иврит как культура». Мне очень повезло оказаться в надежных и заботливых руках Анны, Юлии и Олега.</p>
+              <p>С первой же встречи тебе дают понять - что ты не один, у тебя есть практически круглосуточная поддержка по любым вопросам. Тебе предоставляют готовое удобное расписание, жилье, приятные встречи, языковой курс а еще и поездки всей программой в разные уголки страны.</p>
+              <a href="#" aria-label="Ссылка на прочтения полного отзыва">Читать подробнее</a>
+
+              <ul class="reviews__social social">
+                <li class="social__item">
+                  <a class="social__link" href="#">
+                    <svg class="social__icon" width="24" height="24">
+                      <use xlink:href="#icon-facebook"></use>
+                    </svg>
+                  </a>
+                </li>
+                <li class="social__item">
+                  <a class="social__link" href="#">
+                    <svg class="social__icon" width="24" height="24">
+                      <use xlink:href="#icon-twitter"></use>
+                    </svg>
+                  </a>
+                </li>
+                <li class="social__item">
+                  <a class="social__link" href="#">
+                    <svg class="social__icon" width="24" height="24">
+                      <use xlink:href="#icon-instagram"></use>
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        <div class="reviews__controls">
+          <div class="reviews__pagination">
+            <span class="reviews__current">3</span> /
+            <span class="reviews__total">6</span>
+          </div>
+          <div class="reviews__btn-block">
+            <button type="button" class="reviews__btn reviews__btn--prew"></button>
+            <button type="button" class="reviews__btn reviews__btn--next"></button>
+          </div>
         </div>
       </div>
     </section>

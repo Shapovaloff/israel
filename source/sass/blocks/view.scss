@@ -33,15 +33,11 @@
   position: relative;
   padding-left: 72px;
   text-decoration: none;
+}
 
-  &::before {
-    content: "";
-    position: absolute;
-    left: 40px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 24px;
-    height: 24px;
-    background-image: url("../img/icon-instagram.svg");
-  }
+.view__icon {
+  position: absolute;
+  left: 41px;
+  top: 17px;
+  fill: #ffffff;
 }

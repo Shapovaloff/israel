@@ -1,0 +1,155 @@
+.reviews {
+  position: relative;
+  width: 1366px;
+  margin: 0 auto;
+  padding-bottom: 110px;
+  background-image: url("../../img/reviews-watercolor.png");
+  background-repeat: no-repeat;
+  background-position: right 20px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 524px;
+    height: 318px;
+    top: 56px;
+    right: 0;
+    background-image: url("../../img/reviews-sketch.png");
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
+
+.reviews__wrapper {
+  position: relative;
+  padding-left: 98px;
+  padding-right: 98px;
+}
+
+.reviews__title {
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.reviews__list {
+  @include reset-list;
+}
+
+.reviews__item {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.reviews__photo {
+  margin-right: 40px;
+  width: 364px;
+  height: auto;
+}
+
+.reviews__content {
+  width: 680px;
+  margin-top: 40px;
+}
+
+.reviews__content h4 {
+  margin: 0;
+  margin-bottom: 9px;
+  padding: 0;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 36px;
+  opacity: 0.74;
+}
+
+.reviews__content h4 + p {
+  font-size: 15px;
+  margin: 0;
+  line-height: 21px;
+  opacity: 0.74;
+  margin-bottom: 31px;
+}
+
+.reviews__content p span {
+  margin-right: 6px;
+  color: $color-blue;
+}
+
+.reviews__content p {
+  margin: 0;
+  margin-bottom: 18px;
+  font-size: 17px;
+  line-height: 29px;
+  opacity: 0.74;
+}
+
+.reviews__content a {
+  font: inherit;
+  font-size: 17px;
+  line-height: 25px;
+  color: $color-blue;
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+}
+
+.reviews__controls {
+  position: absolute;
+  left: calc(37% - 4px);
+  width: 103px;
+  display: flex;
+  justify-content: space-between;
+  bottom: 0;
+}
+
+.reviews__pagination {
+  font-size: 17px;
+  line-height: 25px;
+  opacity: 0.5;
+}
+
+.reviews__btn-block {
+  width: 48px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.reviews__btn {
+  position: relative;
+  border: none;
+  background-color: transparent;
+  width: 20px;
+  height: 21px;
+  padding: 0;
+  cursor: pointer;
+  outline: none;
+  opacity: 0.2;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 13px;
+    background-color: $color-black;
+    transform: rotate(45deg);
+    top: 0;
+  }
+
+  &::after {
+    transform: rotate(-45deg);
+    top: 8px;
+  }
+
+  &:hover,
+  &:focus {
+    opacity: 0.9;
+    transition: opacity 0.2s linear;
+  }
+
+  &--next {
+    transform: rotate(180deg);
+  }
+}
