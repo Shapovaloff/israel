@@ -1,12 +1,15 @@
 .social {
   @include reset-list;
   display: flex;
-  justify-content: flex-end;
-  margin-top: 55px;
 }
 
 .social__item {
   margin-left: 16px;
+
+  &--curator {
+    margin-left: 0;
+    margin-right: 12px;
+  }
 }
 
 .social__link {
@@ -20,8 +23,27 @@
 
   &:hover .social__icon,
   &:focus .social__icon {
-    fill: $color-yellow;
+    fill: $color-blue;
     fill-opacity: 1;
     transition: fill 0.2s linear;
   }
+}
+
+.contacts__map {
+  position: relative;
+  padding-top: 5px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 234px;
+    left: 518px;
+    width: 18px;
+    height: 28px;
+    background-image: url("../../img/marker-map.svg");
+  }
+}
+
+.contacts__map-img {
+  display: block;
 }

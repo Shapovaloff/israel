@@ -2,7 +2,7 @@
   position: relative;
   width: 1366px;
   margin: 0 auto;
-  padding-bottom: 110px;
+  padding-bottom: 20px;
   background-image: url("../../img/reviews-watercolor.png");
   background-repeat: no-repeat;
   background-position: right 20px;
@@ -93,6 +93,11 @@
   &:focus {
     text-decoration: none;
   }
+}
+
+.reviews__social {
+  justify-content: flex-end;
+  margin-top: 55px;
 }
 
 .reviews__controls {
