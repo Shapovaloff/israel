@@ -2,6 +2,10 @@
   display: none;
 }
 
+.popup--active {
+  display: block;
+}
+
 .popup__overlay {
   position: fixed;
   top: 0;
@@ -22,7 +26,48 @@
   padding: 56px 48px 40px 48px;
   background: #ffffff;
   border-radius: 8px;
-  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+
+  &--success {
+    padding: 219px 60px 112px 60px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 122px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 71px;
+      height: 64px;
+      background-image: url("../../img/checkmark.png");
+      background-repeat: no-repeat;
+    }
+  }
+}
+
+.popup__close {
+  position: absolute;
+  background-color: transparent;
+  border: none;
+  width: 18px;
+  height: 17px;
+  padding: 0;
+  top: 32px;
+  right: 43px;
+
+  &::after,
+  &::before {
+    content: "";
+    position: absolute;
+    width: 21px;
+    height: 2px;
+    background-color: $color-yellow;
+    transform: rotate(45deg);
+  }
+
+  &::before {
+    transform: rotate(-45deg);
+  }
 }
 
 .popup__title {
@@ -30,11 +75,20 @@
   font-size: 28px;
   line-height: 34px;
   letter-spacing: -0.02em;
+
+  &--success {
+    text-align: center;
+  }
 }
 
 .popup__description {
   padding-right: 25px;
   margin-bottom: 32px;
+
+  &--success {
+    padding-right: 0;
+    text-align: center;
+  }
 }
 
 .popup__item {
@@ -70,12 +124,14 @@
 }
 
 .popup__button {
-  display: flex;
+  display: block;
   margin: 0 auto;
   margin-top: 22px;
   margin-bottom: 18px;
+  min-width: 264px;
   padding-left: 63px;
   padding-right: 63px;
+  text-align: center;
 }
 
 .popup__agreement {

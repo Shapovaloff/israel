@@ -401,7 +401,8 @@
 
   <section class="popup popup--order">
     <div class="popup__overlay"></div>
-    <div class="popup__wrapper">
+    <div class="popup__wrapper popup__wrapper--order">
+      <button type="button" class="popup__close popup__close--order" aria-label="Закрыть окно"></button>
       <div class="popup__container">
       <h3 class="title popup__title">Заказать звонок</h3>
       <p class="popup__description">Оставьте ваши контактные данные, мы свяжемся с вами в течение рабочего дня и обязательно поможем найти ответ на ваш вопрос!</p>
@@ -414,12 +415,24 @@
           <label class="visually-hidden" for="popup__phone">Ваше имя</label>
           <input id="popup__phone" type="text" name="phone" placeholder="телефон" required>
         </p>
-        <button class="button popup__button">перезвоните мне</button>
+        <button class="button popup__button popup__button--order">перезвоните мне</button>
         <div class="popup__agreement">
           <input id="popup__agreement" class="visually-hidden" type="checkbox" name="agreement">
           <label for="popup__agreement">Нажимая на кнопку, вы даёте согласие на обработку персональных данных</label>
         </div>
       </form>
+      </div>
+    </div>
+  </section>
+
+  <section class="popup popup--success ">
+    <div class="popup__overlay"></div>
+    <div class="popup__wrapper popup__wrapper--success">
+      <button type="button" class="popup__close popup__close--success" aria-label="Закрыть окно"></button>
+      <div class="popup__container">
+        <h3 class="title popup__title popup__title--success">Заявка принята</h3>
+        <p class="popup__description popup__description--success">Мы приняли ваши данные и вскоре мы перезвоним вам для уточнения деталей!</p>
+        <button class="button popup__button popup__button--success">Понятно</button>
       </div>
     </div>
   </section>
