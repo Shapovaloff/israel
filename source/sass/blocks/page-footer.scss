@@ -1,0 +1,30 @@
+.page-footer {
+  border-top: 1px solid rgba($color-black, 0.2);
+}
+
+.page-footer__logo {
+  margin-right: 383px;
+}
+
+.page-footer__wrapper {
+  display: flex;
+  align-items: center;
+  width: 1366px;
+  padding-left: 110px;
+  padding-right: 113px;
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
+.page-footer__copyright {
+  padding-bottom: 6px;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 18px;
+  opacity: 0.5;
+}
+
+.page-footer__social {
+  margin-left: auto;
+  padding-bottom: 5px;
+}
