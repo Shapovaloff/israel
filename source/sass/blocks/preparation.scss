@@ -1,25 +1,13 @@
 .preparation {
   position: relative;
-  min-height: 1028px;
-  padding-top: 193px;
-  padding-bottom: 209px;
-  background-image: url("../img/preparation-bg.jpg");
-  background-position: 12px 160px;
+  max-width: 1366px;
+  margin: 0 auto;
+  padding-top: 162px;
+  padding-bottom: 154px;
+  background-image: url("../img/preparation-watercolor.png");
+  background-position: center -38px;
   background-repeat: no-repeat;
-
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 1366px;
-    height: 1208px;
-    background-image: url("../img/preparation-watercolor.png");
-    background-position: center -40px;
-    background-repeat: no-repeat;
-    z-index: -1;
-  }
+  background-size: 100%;
 
   &::after {
     content: "";
@@ -28,17 +16,31 @@
     right: 0;
     width: 217px;
     height: 235px;
-    background-image: url("../img/preparation-stamp.png");
+    background-image: url("../img/preparation-stamp-desktop.png");
     background-repeat: no-repeat;
   }
 }
 
 .preparation__wrapper {
-  margin-left: 50%;
-  width: 552px;
+  display: flex;
+  justify-content: flex-start;
+  max-width: 1366px;
+  margin: 0 auto;
 }
 
-.preparation__content h3 {
+.preparation__img-block {
+  margin-left: 12px;
+  width: calc(42% + 7px);
+  height: auto;
+  margin-right: calc(7% - 5px);
+}
+
+.preparation__content {
+  padding-top: 33px;
+  width: calc(40% + 6px);
+}
+
+.preparation__content h2 {
   margin-left: 16px;
   margin-bottom: 23px;
 }
@@ -54,6 +56,7 @@
   display: block;
   margin-left: 16px;
   margin-bottom: 25px;
+  padding-right: 73px;
   font-weight: 500;
   font-size: 17px;
   line-height: 29px;
@@ -73,14 +76,13 @@
     height: 90%;
     background-image: url("../img/line-dashed.svg");
     background-repeat: repeat-y;
+    z-index: -1;
   }
 }
 
 .preparation__item {
-  position: relative;
   display: flex;
   align-items: center;
-  padding-left: 60px;
   counter-increment: numb;
   margin-bottom: 38px;
   min-height: 36px;
@@ -89,12 +91,13 @@
     margin-bottom: 0;
   }
 
-  &::after {
+  &::before {
     content: counter(numb) "";
-    position: absolute;
+    flex-shrink: 0;
+
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     left: 0;
     top: 0;
     width: 36px;
@@ -104,15 +107,6 @@
     font-size: 17px;
     line-height: 29px;
     color: #ffc341;
-  }
-
-  &::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 36px;
-    height: 36px;
     border-radius: 50%;
     box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
     background-color: #ffffff;
@@ -123,6 +117,7 @@
   margin: 0;
   line-height: 21px;
   opacity: 0.87;
+  padding-left: 24px;
 }
 
 .preparation__content span {
@@ -141,5 +136,96 @@
     width: 5px;
     height: 100%;
     background-image: $gradient;
+  }
+}
+
+@media (max-width: $tablet-width) {
+  .preparation {
+    padding-top: 65px;
+    padding-bottom: 70px;
+  }
+
+  .preparation__img-block {
+    width: calc(39% + 7px);
+    margin-right: 2%;
+  }
+
+  .preparation__content {
+    width: calc(53% + 6px);
+  }
+
+  .preparation__item {
+    margin-bottom: 15px;
+  }
+}
+
+@media (max-width: $mobile-width) {
+  .preparation {
+    padding-top: 0;
+    padding-bottom: 82px;
+    background: none;
+
+    &::after {
+      top: 276px;
+      background-image: url("../img/preparation-stamp-mobile.png");
+    }
+  }
+
+  .preparation__img-block {
+    display: none;
+  }
+
+  .preparation__list {
+    margin-bottom: 25px;
+  }
+
+  .preparation__content {
+    width: auto;
+    padding: 0;
+    padding-left: 8px;
+    padding-right: 16px;
+  }
+
+  .preparation__content h2 {
+    margin-left: 8px;
+    margin-bottom: 27px;
+    text-align: center;
+  }
+
+  .preparation__content p {
+    margin-left: 8px;
+    margin-bottom: 24px;
+    padding-right: 0;
+    font-size: 14px;
+    line-height: 22px;
+  }
+
+  .preparation__content b {
+    margin-bottom: 10px;
+    margin-left: 8px;
+    padding-right: 0;
+    font-size: 16px;
+    line-height: 26px;
+  }
+
+  .preparation__item {
+    margin-bottom: 26px;
+    min-height: 66px;
+  }
+
+  .preparation__item p {
+    margin-left: 16px;
+    margin-bottom: 0;
+  }
+
+  .preparation__content span {
+    margin-left: 2px;
+    padding-left: 14px;
+    font-size: 14px;
+    line-height: 22px;
+
+    &::before {
+      width: 4px;
+    }
   }
 }

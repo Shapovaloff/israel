@@ -1,6 +1,10 @@
 .social {
   @include reset-list;
   display: flex;
+
+  &--reviews {
+    margin-top: 55px;
+  }
 }
 
 .social__item {
@@ -33,21 +37,28 @@
   }
 }
 
-.contacts__map {
-  position: relative;
-  padding-top: 5px;
-
-  &::before {
-    content: "";
-    position: absolute;
-    top: 234px;
-    left: 518px;
-    width: 18px;
-    height: 28px;
-    background-image: url("../../img/marker-map.svg");
+@media (max-width: $mobile-width) {
+  .social {
+    &--reviews {
+      justify-content: flex-start;
+      margin-left: -5px;
+      margin-top: 20px;
+    }
   }
-}
 
-.contacts__map-img {
-  display: block;
+  .social__item {
+    &--reviews {
+      margin-right: 16px;
+      margin-left: 0;
+    }
+
+    &--curator {
+      margin-right: 10px;
+    }
+
+    &--page-footer {
+      margin-left: 12px;
+      margin-right: 12px;
+    }
+  }
 }

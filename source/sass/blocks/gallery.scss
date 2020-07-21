@@ -1,8 +1,11 @@
 .gallery {
   position: relative;
+  max-width: 1366px;
+  margin: 0 auto;
   background-image: url("../img/gallery-watercolor.png");
   background-position: center -44px;
   background-repeat: no-repeat;
+  background-size: 100%;
   padding-bottom: 96px;
 
   &::before {
@@ -19,9 +22,10 @@
 }
 
 .gallery__wrapper {
-  width: 1366px;
-  padding-left: 110px;
-  padding-right: 110px;
+  max-width: 1366px;
+  margin: 0 auto;
+  padding-left: calc(8% + 1px);
+  padding-right: calc(8% + 1px);
 }
 
 .gallery__title {
@@ -30,8 +34,11 @@
   text-align: center;
 }
 
-.gallery__description {
+.gallery__title br {
+  display: none;
+}
 
+.gallery__description {
   width: 720px;
   margin: 0 auto;
   padding-right: 11px;
@@ -48,7 +55,7 @@
   justify-content: space-between;
   flex-wrap: wrap;
   margin-top: 47px;
-  padding-left: 491px;
+  padding-left: calc(43% - 2px);
   padding-right: 2px;
 }
 
@@ -58,8 +65,25 @@
 
   &--excursions {
     position: absolute;
+    width: calc(42% - 1px);
     top: -67px;
     left: -6px;
+  }
+
+  &--stady {
+    width: calc(33% - 4px);
+  }
+
+  &--skills {
+    width: calc(64% - 6px);
+  }
+
+  &--creation {
+    width: calc(64% - 6px);
+  }
+
+  &--development {
+    width: calc(33% - 4px);
   }
 }
 
@@ -93,5 +117,133 @@
 
   &--development {
     left: 26px;
+  }
+}
+
+.gallery__dots {
+  display: none;
+}
+
+@media (max-width: $tablet-width) {
+  .gallery {
+    padding-bottom: 50px;
+
+    &::before {
+      top: 363px;
+    }
+  }
+
+  .gallery__wrapper {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  .gallery__description {
+    width: auto;
+    text-align: center;
+    padding-right: 0;
+  }
+
+  .gallery__item--excursions {
+    width: calc(42% - 1px);
+    top: -43px;
+  }
+
+  .gallery__item {
+    margin-bottom: 7px;
+  }
+
+  .gallery__text {
+    font-size: 18px;
+    line-height: 21px;
+  }
+}
+
+@media (max-width: $mobile-width) {
+  .gallery {
+    background: none;
+
+    &::before {
+      content: none;
+    }
+  }
+
+  .gallery__wrapper {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .gallery__title br {
+    display: block;
+  }
+
+  .gallery__description {
+    padding-right: 12px;
+    margin-bottom: 28px;
+    text-align: left;
+    font-size: 16px;
+    line-height: 26px;
+  }
+
+
+  .gallery__list {
+    padding: 0;
+    margin: 0;
+  }
+
+  .gallery__item {
+    display: none;
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+
+    &--excursions {
+      position: static;
+    }
+
+    &--active {
+      display: block;
+    }
+  }
+
+  .gallery__text {
+    text-align: center;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .gallery__dots {
+    display: flex;
+    align-items: center;
+    min-height: 8px;
+    justify-content: center;
+  }
+
+  .gallery__dot {
+    margin-left: 4px;
+    margin-right: 4px;
+    width: 6px;
+    height: 6px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background-color: rgba($color-black, 0.2);
+    outline: none;
+    cursor: pointer;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &--active {
+      background-color: none;
+      background-image: $gradient;
+      width: 8px;
+      height: 8px;
+    }
   }
 }

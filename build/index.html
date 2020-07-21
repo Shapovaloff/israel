@@ -33,11 +33,15 @@
   <main class="page-main">
     <h1 class="visually-hidden">Учёба, путешествие и карьера для еврейской молодёжи</h1>
     <section class="about">
-      <div class="container">
+      <div class="about__wrapper">
         <h2 class="title about__title">О программе</h2>
         <p class="about__description">«Маса» — совместный проект правительства Израиля и Еврейского агентства Сохнут. Более 250 учебных программ (60 на русском) и возможность стажировки в Израиле.<br>В течение освоения программ предусмотрен грант от 4200 до 8400$.</p>
         <div class="about__video">
-          <img class="about__video-img" src="img/video-desktop@1x.jpg" width="870" height="460" alt="Ознакомительное видео проекта Израиль">
+          <picture>
+            <source media="(max-width: 767px)" srcset="img/video-mobile@1x.png">
+            <img class="about__video-img" src="img/video-desktop@1x.jpg" width="870" height="460" alt="Ознакомительное видео проекта Израиль">
+          </picture>
+
           <div class="about__button">
             <svg class="about__video-btn" width="15" height="19" viewBox="0 0 15 19" fill="#1FC0FC" xmlns="http://www.w3.org/2000/svg">
               <path d="M15 9.5L0 19V0L15 9.5Z"></path>
@@ -51,23 +55,25 @@
       <div class="programs__wrapper">
         <h2 class="title programs__heading">программы</h2>
         <div class="programs__columns">
-          <ul class="programs__controls controls">
-            <li class="controls__item">
-              <button type="button" class="controls__button controls__button--culture">Общие</button>
-            </li>
-            <li class="controls__item controls__item--active">
-              <button type="button" class="controls__button controls__button--study">Академические</button>
-            </li>
-            <li class="controls__item">
-              <button type="button" class="controls__button controls__button--business">Стажировки</button>
-            </li>
-            <li class="controls__item">
-              <button type="button" class="controls__button controls__button--volonteur">Волонтёрство</button>
-            </li>
-            <li class="controls__item">
-              <button type="button" class="controls__button controls__button--religion">Религиозные</button>
-            </li>
-          </ul>
+          <div class="programs__controls-block">
+            <ul class="programs__controls controls">
+              <li class="controls__item">
+                <button type="button" class="controls__button controls__button--culture">Общие</button>
+              </li>
+              <li class="controls__item controls__item--active">
+                <button type="button" class="controls__button controls__button--study">Академические</button>
+              </li>
+              <li class="controls__item">
+                <button type="button" class="controls__button controls__button--business">Стажировки</button>
+              </li>
+              <li class="controls__item">
+                <button type="button" class="controls__button controls__button--volonteur">Волонтёрство</button>
+              </li>
+              <li class="controls__item">
+                <button type="button" class="controls__button controls__button--religion">Религиозные</button>
+              </li>
+            </ul>
+          </div>
 
           <ul class="programs__tabs tabs">
             <li class="tabs__item">
@@ -100,23 +106,28 @@
     </section>
 
     <section class="feedback">
-      <div class="feedback__wrapper">
-        <h2 class="title feedback__title">Хочу поехать!</h2>
-        <p class="feedback__text">Оставьте свой телефон и мы свяжемся с вами, подберём куратора и ответим на все вопросы!</p>
-        <form class="feedback__form" action="https://echo.htmlacademy.ru" method="POST">
-          <label for="feedback__tel" class="visually-hidden">Введите номер телефона</label>
-          <input id="feedback__tel" name="tel" maxlength="16" type="tel" pattern="^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$" placeholder="телефон" required="">
-          <button type="submit" class="button feedback__button">перезвоните мне</button>
-        </form>
+      <div class="feedback__container">
+        <div class="feedback__wrapper">
+          <h2 class="title feedback__title">Хочу поехать!</h2>
+          <p class="feedback__text">Оставьте свой телефон и мы свяжемся с вами, подберём куратора и ответим на все вопросы!</p>
+          <form class="feedback__form" action="https://echo.htmlacademy.ru" method="POST">
+            <label for="feedback__tel" class="visually-hidden">Введите номер телефона</label>
+            <input id="feedback__tel" name="tel" maxlength="16" type="tel" pattern="^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$" placeholder="телефон" required="">
+            <button type="submit" class="button feedback__button">перезвоните мне</button>
+          </form>
+        </div>
       </div>
     </section>
 
     <section class="preparation">
       <div class="preparation__wrapper">
+        <div class="preparation__img-block">
+          <img class="preparation__img" width="581" height="707" src="img/preparation-bg.jpg" alt="Довольные люди">
+        </div>
         <div class="preparation__content">
           <h2 class="title">Как поехать</h2>
           <p>Чтобы узнать подробнее о программе, свяжитесь с координатором в вашем городе. Вы получите актуальные сведения о доступных программах и городах, в которых можете пройти программу.</p>
-          <b>Чтобы иметь возможность получить грант на обучение <br> от 4200 до 8400$, вы должны:</b>
+          <b>Чтобы иметь возможность получить грант на обучение от 4200 до 8400$, вы должны:</b>
           <ul class="preparation__list">
             <li class="preparation__item">
               <p>Быть в возрасте от 16 до 30 лет</p>
@@ -125,7 +136,7 @@
               <p>Иметь оконченное среднее образование</p>
             </li>
             <li class="preparation__item">
-              <p>Иметь документально подтверждённые еврейские корни и пройти консульскую проверку</p>
+              <p>Иметь документально подтверждённые еврейские корни &nbsp; и пройти консульскую проверку</p>
             </li>
             <li class="preparation__item">
               <p>За последние 2 года быть не больше 3х месяцев подряд непрерывно в Израиле.</p>
@@ -138,49 +149,76 @@
 
     <section class="gallery">
       <div class="gallery__wrapper">
-        <h2 class="title gallery__title">Жизнь в израиле</h2>
+        <h2 class="title gallery__title">Жизнь <br> в израиле</h2>
         <p class="gallery__description">Помимо учёбы, в рамках программе у вас будет возможность путешествовать по стране и познакомиться с богатой культурно-исторической жизнью Израиля и его жителей.</p>
         <ul class="gallery__list">
-          <li class="gallery__item gallery__item--excursions">
-            <img class="gallery__img gallery__img--excursions" width="482" height="732" src="img/excursions-desktop@1x.png" alt="Экскурсии по Израилю">
+          <li class="gallery__item gallery__item--excursions gallery__item--active">
+            <picture>
+              <source media="(max-width: 767px)" srcset="img/excursions-mobile@1x.png">
+
+              <img class="gallery__img gallery__img--excursions" width="482" height="732" src="img/excursions-desktop@1x.png" alt="Экскурсии по Израилю">
+            </picture>
             <p class="gallery__text gallery__text--excursions">Экскурсии по Израилю <br> и знакомство с его историей</p>
           </li>
           <li class="gallery__item gallery__item--stady">
-            <img class="gallery__img gallery__img--stady" src="img/stady-desktop@1x.png" width="211" height="318" alt="Изучение иврита">
+            <picture>
+              <source media="(max-width: 767px)" srcset="img/stady-mobile@1x.png">
+
+              <img class="gallery__img gallery__img--stady" src="img/stady-desktop@1x.png" width="211" height="318" alt="Изучение иврита">
+            </picture>
             <p class="gallery__text gallery__text--stady">Изучение иврита</p>
           </li>
           <li class="gallery__item gallery__item--skills">
-            <img class="gallery__img gallery__img--skills" src="img/skills-desktop@1x.png" width="411" height="318" alt="Обучение современным навыкам и профессиям">
+            <picture>
+              <source media="(max-width: 767px)" srcset="img/skills-mobile@1x.png">
+
+              <img class="gallery__img gallery__img--skills" src="img/skills-desktop@1x.png" width="411" height="318" alt="Обучение современным навыкам и профессиям">
+            </picture>
             <p class="gallery__text gallery__text--skills">Обучение современным навыкам и профессиям</p>
           </li>
           <li class="gallery__item gallery__item--creation">
-            <img class="gallery__img gallery__img--creation" src="img/creation-desktop@1x.png" width="411" height="318" alt="Совместные творческие проекты с израильской молодёжью">
+            <picture>
+              <source media="(max-width: 767px)" srcset="img/creation-mobile@1x.png">
+
+              <img class="gallery__img gallery__img--creation" src="img/creation-desktop@1x.png" width="411" height="318" alt="Совместные творческие проекты с израильской молодёжью">
+            </picture>
             <p class="gallery__text gallery__text--creation">Совместные творческие проекты с израильской молодёжью</p>
           </li>
           <li class="gallery__item gallery__item--development">
-            <img class="gallery__img gallery__img--development" src="img/development-desktop@1x.png" width="214" height="318" alt="Развитие лидерства">
+            <picture>
+              <source media="(max-width: 767px)" srcset="img/development-mobile@1x.png">
+
+                <img class="gallery__img gallery__img--development" src="img/development-desktop@1x.png" width="214" height="318" alt="Развитие лидерства">
+            </picture>
             <p class="gallery__text gallery__text--development">Развитие лидерства</p>
           </li>
         </ul>
+        <div class="gallery__dots">
+          <button type="button" class="gallery__dot gallery__dot--active" aria-label="слайдер 1"></button>
+          <button type="button" class="gallery__dot" aria-label="слайдер 2"></button>
+          <button type="button" class="gallery__dot" aria-label="слайдер 3"></button>
+          <button type="button" class="gallery__dot" aria-label="слайдер 4"></button>
+          <button type="button" class="gallery__dot" aria-label="слайдер 5"></button>
+        </div>
       </div>
     </section>
 
     <section class="view">
       <div class="view__wrapper">
         <h2 class="title view__title">#masaisrael</h2>
-        <p class="view__description">Познакомьтесь с программой  от первого лица! Многие участники ведут блоги и фотодневники о жизни, учёбе и путешествиях в Израиле.</p>
+        <p class="view__description">Познакомьтесь с программой <br> от первого лица! Многие участники ведут блоги и фотодневники <br> о жизни, учёбе и путешествиях <br> в Израиле.</p>
         <a class="button view__button" href="#" aria-label="Ссылка на инстраграмм">
-          <svg class="view__icon" width="24" height="24">
+          <svg class="view__button-icon" width="24" height="24">
             <use xlink:href="#icon-instagram"></use>
           </svg>
-          смотреть фото
+          <span class="view__button-text">смотреть фото</span>
         </a>
       </div>
     </section>
 
     <section class="questions">
-      <div class="container">
-        <div class="questions__wrapper">
+      <div class="questions__wrapper">
+        <div class="questions__cotent">
           <h2 class="title questions__title">частые вопросы</h2>
           <ul class="questions__list">
             <li class="questions__item">
@@ -239,6 +277,10 @@
             </li>
           </ul>
         </div>
+
+        <div class="questions__img-block">
+          <img src="img/qestions-people-desktop@1x.png" alt="">
+        </div>
       </div>
     </section>
 
@@ -247,14 +289,12 @@
         <h2 class="title reviews__title">отзывы</h2>
         <ul class="reviews__list">
           <li class="reviews__item">
-            <svg class="reviews__photo" width="364" height="480" viewBox="0 0 364 480" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
-              <defs>
-                <mask id="mask-1">
-                  <image width="364" height="480" xlink:href="img/reviews-mask@1x.png"></image>
-                </mask>
-              </defs>
-              <image xlink:href="img/reviews-photo@1x.jpg" mask="url(#mask-1)"></image>
-            </svg>
+            <div class="reviews__photo-block">
+              <picture>
+                <source media="(max-width: 767px)" srcset="img/reviews-photo-mobile@1x.png">
+                <img class="reviews__photo" src="img/reviews-photo-desktop@1x.png" width="364" height="480" alt="Фото Ольги Михайловой">
+              </picture>
+            </div>
             <div class="reviews__content">
               <h4>Ольга Михайлова</h4>
               <p><span>Программа:</span> Арт‑Тель, февраль‑сентябрь 2017</p>
@@ -262,22 +302,22 @@
               <p>С первой же встречи тебе дают понять - что ты не один, у тебя есть практически круглосуточная поддержка по любым вопросам. Тебе предоставляют готовое удобное расписание, жилье, приятные встречи, языковой курс а еще и поездки всей программой в разные уголки страны.</p>
               <a href="#" aria-label="Ссылка на прочтения полного отзыва">Читать подробнее</a>
 
-              <ul class="reviews__social social">
-                <li class="social__item">
+              <ul class="reviews__social social social--reviews">
+                <li class="social__item social__item--reviews">
                   <a class="social__link" href="#">
                     <svg class="social__icon" width="24" height="24">
                       <use xlink:href="#icon-facebook"></use>
                     </svg>
                   </a>
                 </li>
-                <li class="social__item">
+                <li class="social__item social__item--reviews">
                   <a class="social__link" href="#">
                     <svg class="social__icon" width="24" height="24">
                       <use xlink:href="#icon-twitter"></use>
                     </svg>
                   </a>
                 </li>
-                <li class="social__item">
+                <li class="social__item social__item--reviews">
                   <a class="social__link" href="#">
                     <svg class="social__icon" width="24" height="24">
                       <use xlink:href="#icon-instagram"></use>
@@ -338,11 +378,15 @@
               </ul>
             </div>
           </div>
-          <p class="contacts__description">Куратор является опытным специалистом агентства Сохнут и знает о проекте «Маса» всё! Свяжитесь с куратором, узнайте подробнее о программах и выберите свою !</p>
+          <p class="contacts__description">Куратор является опытным специалистом агентства Сохнут <br> и знает о проекте «Маса» всё! Свяжитесь с куратором, <br> узнайте подробнее о программах и выберите свою !</p>
         </div>
 
         <div class="contacts__map">
-          <img class="contacts__map-img" src="img/map-desktop@1x.png" alt="Новосибирск, ул. Щетинкина 68, культурный центр «Бейт Менахем»">
+          <picture>
+            <source media="(max-width: 767px)" srcset="img/map-mobile@1x.png">
+            <img class="contacts__map-img" src="img/map-desktop@1x.png" alt="Новосибирск, ул. Щетинкина 68, культурный центр «Бейт Менахем»">
+          </picture>
+
         </div>
       </div>
       <div class="contacts__feedback">
@@ -351,16 +395,14 @@
           <p>Мы не передаём данные третьим лицам. Ваши данные будут в безопасности и вам не придёт спам от нас!</p>
         </div>
         <form class="contacts__form" action="https://echo.htmlacademy.ru" method="POST">
-          <ul class="contacts__form-list">
-            <li class="contacts__form-item">
-              <label class="visually-hidden" for="contacts__form-name">ваше имя</label>
-              <input id="contacts__form-name" name="name" type="text" placeholder="имя" required="">
-            </li>
-            <li class="contacts__form-item">
-              <label class="visually-hidden" for="contacts__form-tel">ваш телефон</label>
-              <input id="contacts__form-tel" name="phone" type="text" placeholder="телефон" required="">
-            </li>
-          </ul>
+          <p class="contacts__form-item">
+            <label class="visually-hidden" for="contacts__form-name">ваше имя</label>
+            <input id="contacts__form-name" name="name" type="text" placeholder="имя" required="">
+          </p>
+          <p class="contacts__form-item">
+            <label class="visually-hidden" for="contacts__form-tel">ваш телефон</label>
+            <input id="contacts__form-tel" name="phone" type="text" placeholder="телефон" required="">
+          </p>
           <button class="button contacts__form-btn" type="submit">перезвоните мне</button>
         </form>
       </div>
@@ -376,21 +418,21 @@
       <ul class="page-footer__social social social--page-footer">
         <li class="social__item social__item--page-footer">
           <a class="social__link" href="#">
-            <svg class="social__icon" width="24" height="24">
+            <svg class="social__icon social__icon--page-footer" width="24" height="24">
               <use xlink:href="#icon-facebook"></use>
             </svg>
           </a>
         </li>
         <li class="social__item social__item--page-footer">
           <a class="social__link" href="#">
-            <svg class="social__icon" width="24" height="24">
+            <svg class="social__icon social__icon--page-footer" width="24" height="24">
               <use xlink:href="#icon-twitter"></use>
             </svg>
           </a>
         </li>
         <li class="social__item social__item--page-footer">
           <a class="social__link" href="#">
-            <svg class="social__icon" width="24" height="24">
+            <svg class="social__icon social__icon--page-footer" width="24" height="24">
               <use xlink:href="#icon-instagram"></use>
             </svg>
           </a>

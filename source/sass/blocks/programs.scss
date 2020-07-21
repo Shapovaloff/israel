@@ -1,5 +1,5 @@
 .programs {
-  background-image: url("../../img/programs-bg.png");
+  background-image: url("../img/programs-сity-desktop.png");
   background-repeat: no-repeat;
   background-position: top right;
   background-size: 680px 426px;
@@ -23,4 +23,45 @@
   justify-content: space-between;
   padding-right: 94px;
   margin-top: 68px;
+}
+
+@media (max-width: $tablet-width) {
+  .programs__wrapper {
+    width: auto;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  .programs__columns {
+    padding-right: 0;
+  }
+}
+
+@media (max-width: $mobile-width) {
+  .programs {
+    background-image: url("../img/programs-сity-mobile.png");
+    padding-bottom: 30px;
+    background-position: right 165px;
+    background-size: 296px 201px;
+  }
+
+  .programs__wrapper {
+    margin-top: 32px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .programs__columns {
+    flex-direction: column;
+    margin-top: 17px;
+  }
+
+  .programs__heading {
+    text-align: center;
+  }
+
+  .programs__controls {
+    display: flex;
+    flex-direction: row;
+  }
 }

@@ -1,10 +1,12 @@
 .questions {
   position: relative;
-  padding-top: 137px;
-  padding-bottom: 131px;
-  background-image: url("../img/qestions-people-desktop@1x.png"), url("../img/questions-watercolor.png");
-  background-position: right 137px, center 57px;
-  background-repeat: no-repeat, no-repeat;
+  max-width: 1366px;
+  margin: 0 auto;
+  padding-top: 10%;
+  padding-bottom: calc(9% - 3px);
+  background-image: url("../img/questions-watercolor.png");
+  background-position: center 57px;
+  background-repeat: no-repeat;
 
   &::before {
     content: "";
@@ -13,13 +15,24 @@
     height: 177px;
     left: 0;
     top: 864px;
-    background-image: url("../img/questions-bag.png");
+    background-image: url("../img/questions-bag-desktop.png");
     background-repeat: no-repeat;
   }
 }
 
 .questions__wrapper {
-  width: 560px;
+  padding-left: calc(8% + 1px);
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.questions__img-block {
+  width: calc(52% - 8px);
+}
+
+.questions__cotent {
+  width: calc(45% - 5px);
 }
 
 .questions__title {
@@ -90,4 +103,82 @@
   top: 18px;
   border: none;
   background-color: transparent;
+  cursor: pointer;
+}
+
+@media (max-width: $tablet-width) {
+  .questions {
+    padding-top: 8%;
+    padding-bottom: calc(7% - 3px);
+  }
+
+  .questions__wrapper {
+    padding-left: calc(5% + 1px);
+  }
+
+  .questions__cotent {
+    width: calc(56% - 5px);
+  }
+
+  .questions__img-block {
+    width: calc(43% - 8px);
+  }
+}
+
+@media (max-width: $mobile-width) {
+  .questions {
+    padding-top: 51px;
+    padding-bottom: 57px;
+    background: none;
+
+    &::before {
+      top: 710px;
+      background-image: url("../img/questions-bag-mobile.png");
+    }
+  }
+
+  .questions__title {
+    margin-bottom: 24px;
+  }
+
+  .questions__wrapper {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .questions__img-block {
+    display: none;
+  }
+
+  .questions__cotent {
+    width: auto;
+  }
+
+  .questions__item {
+    padding-right: 28px;
+    min-height: 64px;
+    padding-bottom: 16px;
+
+    &::after {
+      top: 23px;
+    }
+  }
+
+  .questions__button {
+    right: 0;
+    padding: 0;
+    top: 21px;
+  }
+
+  .questions__heading {
+    padding-left: 25px;
+    font-size: 16px;
+    line-height: 26px;
+  }
+
+  .questions__text {
+    margin-top: 19px;
+    font-size: 14px;
+    line-height: 22px;
+  }
 }

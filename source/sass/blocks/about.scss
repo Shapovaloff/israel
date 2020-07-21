@@ -1,9 +1,13 @@
 .about {
-  min-height: 764px;
+  padding-bottom: 95px;
   background-image: url("../img/about-programs-watercolor.png");
   background-repeat: no-repeat;
   background-size: 1366px 604px;
   background-position: center 160px;
+}
+
+.about__wrapper {
+  margin: 0 auto;
 }
 
 .about__title {
@@ -90,4 +94,44 @@
   top: 50%;
   left: 50%;
   transform: translate(-38%, -50%);
+}
+
+@media (max-width: $tablet-width) {
+  .about__video {
+    width: calc(86% - 10px);
+  }
+}
+
+@media (max-width: $mobile-width) {
+  .about {
+    padding-top: 27px;
+    padding-bottom: 0;
+    background-size: 420px 186px;
+    background-position: center 227px;
+  }
+
+  .about__description {
+    width: auto;
+    font-size: 16px;
+    line-height: 27px;
+    text-align: left;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .about__video {
+    width: auto;
+    margin-top: 46px;
+  }
+
+  .about__button {
+    width: 80px;
+    height: 80px;
+    transform: translate(-50%, -41%);
+  }
+
+  .about__video-btn {
+    width: 13px;
+    height: 16px;
+  }
 }

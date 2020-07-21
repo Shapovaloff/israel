@@ -1,17 +1,27 @@
 .page-header {
-  min-height: 895px;
-  height: 100vh;
+  max-width: 1366px;
+  margin: 0 auto;
+  padding-bottom: calc(14% - 2px);
+  height: 100%;
   background-image: url("../img/header-bg-desktop@1x.jpg");
-  background-size: 1366px 906px;
   background-position: center top;
   background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.page-header__wrapper {
+  margin: 0 auto;
+  padding-left: 110px;
+  padding-right: 110px;
 }
 
 .page-header__nav {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding-top: 28px;
+  margin-bottom: calc(40% - 5px);
 }
 
 .page-header__logo {
@@ -53,7 +63,7 @@
 .page-header__text {
   margin: 0;
   padding: 0;
-  margin-top: 452px;
+  margin-top: auto;
   text-align: center;
   font-size: 24px;
   line-height: 29px;
@@ -67,6 +77,7 @@
   padding: 0;
   margin: 0 auto;
   margin-top: 32px;
+
   width: 76px;
   height: 76px;
   border-radius: 50%;
@@ -102,5 +113,65 @@
 
   100% {
     transform: rotate(360deg);
+  }
+}
+
+@media (max-width: $tablet-width) {
+  .page-header__wrapper {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  .page-header__nav {
+    margin-bottom: calc(27% - 5px);
+  }
+}
+
+@media (max-width: $mobile-width) {
+  .page-header {
+    min-height: 605px;
+    background-image: url("../../img/header-bg-mobile@1x.png");
+    background-size: cover;
+    background-position: center 32px;
+  }
+
+  .page-header__wrapper {
+    padding-left: 9px;
+    padding-right: 9px;
+  }
+
+  .page-header__nav {
+    padding-top: 21px;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-bottom: 272px;
+  }
+
+  .page-header__logo {
+    margin-top: 0;
+    width: 120px;
+    height: 42px;
+    order: 0;
+    margin-right: 0;
+    position: absolute;
+    left: 7px;
+    top: 21px;
+  }
+
+  .page-header__phone {
+    font-size: 14px;
+    line-height: 17px;
+    margin-bottom: 8px;
+  }
+
+  .page-header__order {
+    font-size: 14px;
+    line-height: 17px;
+    margin-right: 0;
+  }
+
+  .page-header__text {
+    font-size: 20px;
+    line-height: 24px;
   }
 }

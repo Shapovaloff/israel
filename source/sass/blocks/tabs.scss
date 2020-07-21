@@ -31,3 +31,40 @@
   margin-bottom: 17px;
   opacity: 0.87;
 }
+
+@media (max-width: $tablet-width) {
+  .tabs {
+    width: calc(62% - 10px);
+  }
+}
+
+
+@media (max-width: $mobile-width) {
+  .tabs {
+    margin-top: 29px;
+    width: 100%;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .tabs__title {
+    margin-bottom: 16px;
+    font-size: 24px;
+    line-height: 29px;
+  }
+
+  .tabs__text {
+    font-size: 14px;
+    line-height: 160%;
+    padding-right: 3px;
+    margin-bottom: 10px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .tabs__text br {
+    display: none;
+  }
+}

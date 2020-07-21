@@ -35,3 +35,28 @@
   line-height: 19px;
   opacity: 0.74;
 }
+
+@media (max-width: $tablet-width) {
+  .curator {
+    display: block;
+    margin-bottom: 33px;
+  }
+
+  .curator__img {
+    margin-bottom: 9px;
+  }
+
+  .curator__info {
+    width: auto;
+  }
+
+  .curator__info p {
+    padding-left: 0;
+    margin-bottom: 13px;
+  }
+
+  .curator__info p + p {
+    padding-left: 0;
+    margin-bottom: 16px;
+  }
+}

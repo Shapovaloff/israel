@@ -1,12 +1,12 @@
 .view {
-  width: 1366px;
+  max-width: 1366px;
   margin: 0 auto;
-  min-height: 615px;
-  padding-top: 154px;
-  padding-bottom: 195px;
+  padding-top: calc(12% - 10px);
+  padding-bottom: calc(15% - 10px);
   background-image: url("../../img/view-bg-desktop@1x.png");
-  background-position: 5px 34px;
+  background-position: 3px 34px;
   background-repeat: no-repeat;
+  background-size: 100%;
 }
 
 .view__wrapper {
@@ -29,15 +29,80 @@
   text-shadow: $text-shadow;
 }
 
-.view__button {
-  position: relative;
-  padding-left: 72px;
-  text-decoration: none;
+.view__description br {
+  display: none;
 }
 
-.view__icon {
-  position: absolute;
-  left: 41px;
-  top: 17px;
+.view__button {
+  display: flex;
+  width: auto;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  max-width: 230px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 16px;
+  padding-bottom: 17px;
+}
+
+.view__button-icon {
   fill: #ffffff;
+  margin-right: 9px;
+  margin-bottom: 2px;
+}
+
+@media (max-width: $tablet-width) {
+  .view {
+    padding-top: calc(10% - 10px);
+    padding-bottom: calc(12% - 10px);
+  }
+
+  .view__wrapper {
+    width: auto;
+    margin-left: calc(45% - 10px);
+  }
+}
+
+@media (max-width: $mobile-width) {
+  .view {
+    padding-top: 31px;
+    background-image: url("../img/view-bg-mobile@1x.png");
+    background-position: calc(50% + 87px) 74px;
+    background-size: 632px;
+  }
+
+  .view__wrapper {
+    margin-left: 0;
+  }
+
+  .view__title {
+    margin-right: 2px;
+    margin-bottom: 95px;
+    font-size: 40px;
+    line-height: 49px;
+  }
+
+  .view__description {
+    max-width: 380px;
+    padding-left: 23px;
+    padding-right: 25px;
+    font-size: 16px;
+    line-height: 26px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 61px;
+  }
+
+  .view__description br {
+    display: block;
+  }
+
+  .view__button {
+    max-width: 264px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 16px;
+    padding-bottom: 17px;
+  }
 }

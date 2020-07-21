@@ -1,9 +1,5 @@
 .feedback {
   position: relative;
-  min-height: 594px;
-  background-image: url("../img/feedback-bgdesktop@1x.jpg");
-  background-repeat: no-repeat;
-  background-position: top right;
 
   &::after {
     content: "";
@@ -12,19 +8,28 @@
     left: 0;
     width: 116px;
     height: 247px;
-    background-image: url("../../img/backpack.png");
+    background-image: url("../img/feedback-backpack-desktop.png");
     background-repeat: no-repeat;
   }
+}
+
+.feedback__container {
+  max-width: 1366px;
+  margin: 0 auto;
+  padding-bottom: 129px;
+  background-image: url("../img/feedback-bg-desktop@1x.jpg");
+  background-repeat: no-repeat;
+  background-position: top right;
 }
 
 .feedback__wrapper {
   width: 946px;
   margin: 0 auto;
+  padding-top: 210px;
 }
 
 .feedback__title {
   margin-right: 50%;
-  padding-top: 210px;
 }
 
 .feedback__text {
@@ -59,11 +64,11 @@
   opacity: 0.87;
 
   &:hover {
-    border-color: $color-black;
+    border-color: $color-yellow;
   }
 
   &:focus {
-    border-color: $color-yellow;
+    border-color: $color-black;
   }
 }
 
@@ -72,4 +77,75 @@
   top: 0;
   right: 0;
   height: 100%;
+}
+
+@media (max-width: $tablet-width) {
+  .feedback__container {
+    background-size: 70%;
+    padding-bottom: 80px;
+  }
+
+  .feedback__wrapper {
+    width: auto;
+    padding-top: 90px;
+    padding-left: 40px;
+  }
+}
+
+@media (max-width: $mobile-width) {
+  .feedback {
+    padding-top: 26px;
+
+    &::after {
+      background-image: url("../img/feedback-backpack-mobile.png");
+      top: 0;
+      width: 86px;
+      height: 180px;
+    }
+  }
+
+  .feedback__container {
+    min-height: 700px;
+    background-image: url("../img/feedback-bg-mobile@1x.png");
+    background-size: 424px 308px;
+    background-position: center 312px;
+  }
+
+  .feedback__wrapper {
+    padding-top: 22px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .feedback__title {
+    margin-right: 0;
+  }
+
+  .feedback__text {
+    margin-right: 0;
+    font-size: 16px;
+    line-height: 26px;
+  }
+
+  .feedback__form {
+    width: 100%;
+    max-width: 350px;
+    margin-left: auto;
+    margin-right: auto;
+    flex-direction: column;
+    margin-top: 25px;
+  }
+
+  .feedback__form input {
+    width: 100%;
+    margin-bottom: 8px;
+    padding: 18px 40px 18px 40px;
+  }
+
+  .feedback__button {
+    width: auto;
+    position: relative;
+    margin-left: 11px;
+    margin-right: 11px;
+  }
 }

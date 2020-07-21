@@ -9,3 +9,11 @@
   text-transform: uppercase;
   color: $color-blue;
 }
+
+@media (max-width: $mobile-width) {
+  .title {
+    font-size: 32px;
+    line-height: 39px;
+    text-align: center;
+  }
+}
