@@ -123,6 +123,20 @@
   }
 }
 
+input.input--invalid {
+  border-color: red;
+
+  &:hover,
+  &:focus {
+    border-color: red;
+  }
+}
+
+input.input--invalid + label::before {
+  background-image: none;
+  border: 2px solid red;
+}
+
 .popup__button {
   display: block;
   margin: 0 auto;

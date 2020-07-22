@@ -61,17 +61,19 @@
   var orderPopup = document.querySelector('.popup--order');
   var orderClose = orderPopup.querySelector('.popup__close--order');
   var orderOverlay = orderPopup.querySelector('.popup__overlay--order');
+  var fieldName = orderPopup.querySelector('input[type="text"]');
 
   var openOrderPopup = function (evt) {
     evt.preventDefault();
     bodyElement.classList.add('no-scroll');
-    orderPopup.classList.add('popup--active')
+    orderPopup.classList.add('popup--active');
+    fieldName.focus();
   }
 
   window.closeOrderPopup = function (evt) {
     evt.preventDefault();
     bodyElement.classList.remove('no-scroll');
-    orderPopup.classList.remove('popup--active')
+    orderPopup.classList.remove('popup--active');
   }
 
   window.addEventListener('keydown', function (evt) {
@@ -95,56 +97,6 @@
   })
 })();
 
-// Функция реализации модального окна "Заявка отправлена"
-
-(function () {
-  var ESCAPE = 27;
-  var bodyElement = document.querySelector('body');
-  var feedbackButton = document.querySelector('.feedback__button');
-  var contactsButton = document.querySelector('.contacts__form-btn');
-  var popupSuccess = document.querySelector('.popup--success');
-  var overlaySuccess = document.querySelector('.popup__overlay--success');
-  var popupCloseSuccess = document.querySelector('.popup__close--success')
-  var popupOrderButton = document.querySelector('.popup__button--order');
-  var popupSuccessButton = document.querySelector('.popup__button--success');
-
-  var openSuccessPopup = function (evt) {
-    evt.preventDefault();
-    popupSuccess.classList.add('popup--active')
-    bodyElement.classList.add('no-scroll');
-  }
-
-  var closeSuccessPopup = function () {
-    popupSuccess.classList.remove('popup--active');
-    bodyElement.classList.remove('no-scroll');
-  }
-
-  window.addEventListener('keydown', function (evt) {
-    if (evt.keyCode === ESCAPE) {
-      if (popupSuccess.classList.contains('popup--active')) {
-        closeSuccessPopup(evt);
-      }
-    }
-  });
-
-  feedbackButton.addEventListener('click', function (evt) {
-    openSuccessPopup(evt);
-  });
-
-  contactsButton.addEventListener('click', function (evt) {
-    openSuccessPopup(evt);
-  });
-
-  popupSuccessButton.addEventListener('click', closeSuccessPopup);
-  overlaySuccess.addEventListener('click', closeSuccessPopup);
-  popupCloseSuccess.addEventListener('click', closeSuccessPopup);
-
-  popupOrderButton.addEventListener('click', function (evt) {
-    window.closeOrderPopup(evt);
-    openSuccessPopup(evt);
-  })
-})();
-
 // Добавляет окрытие и закрытие вопроса в блоке "Частые воросы"
 
 (function () {
@@ -164,4 +116,137 @@
   for (var i = 0; i < questionsButton.length; i++) {
     activeItem(questionsButton[i], i);
   }
+})();
+
+
+// Маска для телефона
+(function () {
+  var fieldPhone = document.querySelectorAll('input[type="tel"]');
+
+  var validateTel = function (element) {
+    window.imaskJS(element, {
+      min: 110,
+      mask: '+7 (000) 000 00 00'
+    });
+  };
+
+  fieldPhone.forEach(function (input) {
+    validateTel(input);
+  });
+
+})();
+
+// Функция валидации формы
+
+(function () {
+  var validatesField = function (fieldsName, evt) {
+    if (fieldsName.type === "text" && fieldsName.value.length < 2) {
+      evt.preventDefault();
+      fieldsName.classList.add('input--invalid');
+    } else if (fieldsName.type === "checkbox" && !fieldsName.checked) {
+      evt.preventDefault();
+      fieldsName.classList.add('input--invalid');
+    } else if (fieldsName.type === "tel" && fieldsName.value.length < 18) {
+      evt.preventDefault();
+      fieldsName.classList.add('input--invalid');
+    }
+  };
+
+  var requiredField = function (fieldsName) {
+    fieldsName.addEventListener('input', function () {
+      if (fieldsName.type === "text" && fieldsName.value > 2) {
+        fieldsName.classList.remove('input--invalid');
+      } else if (fieldsName.type === "checkbox" && fieldsName.checked) {
+        fieldsName.classList.remove('input--invalid');
+      } else if (fieldsName.type === "tel" && fieldsName.value.length >= 18) {
+        fieldsName.classList.remove('input--invalid');
+      }
+    })
+  }
+
+  window.validatesForm = function (fields, evt) {
+    for (var i = 0; i < fields.length; i++) {
+      validatesField(fields[i], evt);
+      requiredField(fields[i]);
+    }
+  }
+})();
+
+// Функция реализации модального окна "Заявка отправлена"
+
+(function () {
+  var ESCAPE = 27;
+  var bodyElement = document.querySelector('body');
+  var popupSuccess = document.querySelector('.popup--success');
+  var overlaySuccess = document.querySelector('.popup__overlay--success');
+  var popupCloseSuccess = document.querySelector('.popup__close--success')
+  var popupSuccessButton = document.querySelector('.popup__button--success');
+
+  window.openSuccessPopup = function (evt) {
+    evt.preventDefault();
+    popupSuccess.classList.add('popup--active')
+    bodyElement.classList.add('no-scroll');
+  }
+
+  var closeSuccessPopup = function () {
+    popupSuccess.classList.remove('popup--active');
+    bodyElement.classList.remove('no-scroll');
+  }
+
+  window.addEventListener('keydown', function (evt) {
+    if (evt.keyCode === ESCAPE) {
+      if (popupSuccess.classList.contains('popup--active')) {
+        closeSuccessPopup(evt);
+      }
+    }
+  });
+
+  popupSuccessButton.addEventListener('click', closeSuccessPopup);
+  overlaySuccess.addEventListener('click', closeSuccessPopup);
+  popupCloseSuccess.addEventListener('click', closeSuccessPopup);
+})();
+
+// Отправка форм на сайте
+
+(function () {
+  var popupForm = document.querySelector('.popup__form');
+  var popupFields = popupForm.querySelectorAll('input');
+  var popupName = popupForm.querySelector('input[type="text"]');
+  var popupPhone = popupForm.querySelector('input[type="tel"]');
+  var popupCheckbox = popupForm.querySelector('input[type="checkbox"]');
+
+  var contactsForm = document.querySelector('.contacts__form')
+  var contactsFields = contactsForm.querySelectorAll('input');
+  var contactsName = contactsForm.querySelector('input[type="text"]');
+  var contactsPhone = contactsForm.querySelector('input[type="tel"]');
+
+  var feedbackForm = document.querySelector('.feedback__form')
+  var feedbackFields = feedbackForm.querySelectorAll('input');
+  var feedbackPhone = feedbackForm.querySelector('input[type="tel"]');
+
+
+  popupForm.addEventListener('submit', function (evt) {
+    if (popupName.value.length < 2 || popupPhone.value.length < 18 || !popupCheckbox.checked) {
+      window.validatesForm(popupFields, evt);
+    } else {
+      window.closeOrderPopup(evt);
+      window.openSuccessPopup(evt);
+    }
+  });
+
+  contactsForm.addEventListener('submit', function (evt) {
+    if (contactsName.value.length < 2 || contactsPhone.value.length < 18) {
+      window.validatesForm(contactsFields, evt);
+    } else {
+      window.openSuccessPopup(evt);
+    }
+  });
+
+  feedbackForm.addEventListener('submit', function (evt) {
+    if (feedbackPhone.value.length < 18) {
+      window.validatesForm(feedbackFields, evt);
+    } else {
+      window.openSuccessPopup(evt);
+    }
+  });
 })();
