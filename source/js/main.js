@@ -23,29 +23,33 @@
   var tabsElement = document.querySelectorAll('.tabs__item');
 
   var activeTabsButton = function (indexButtons) {
-    tabsButtons.forEach(function (item) {
-      item.classList.remove('controls__item--active');
-      if (indexButtons === item) {
-        item.classList.add('controls__item--active');
+    for (var i = 0; i < tabsButtons.length; i++) {
+      tabsButtons[i].classList.remove('controls__item--active');
+      if (indexButtons === tabsButtons[i]) {
+        tabsButtons[i].classList.add('controls__item--active');
       }
-    });
+    }
+  }
+
+  var activeTabsElement = function (element) {
+    for (var i = 0; i < tabsElement.length; i++) {
+      tabsElement[i].classList.remove('tabs__item--active');
+      if (i === element) {
+        tabsElement[i].classList.add('tabs__item--active');
+      }
+    }
   };
 
-  var activeTabsElement = function (indexElement) {
-    tabsElement.forEach(function (item, index) {
-      item.classList.remove('tabs__item--active');
-      if (index === indexElement) {
-        item.classList.add('tabs__item--active');
-      }
-    });
-  };
-
-  tabsButtons.forEach(function (item, index) {
+  var activeTab = function (item, index) {
     item.addEventListener('click', function () {
       activeTabsElement(index);
       activeTabsButton(item);
     });
-  });
+  }
+
+  for (var i = 0; i < tabsButtons.length; i++) {
+    activeTab(tabsButtons[i], i)
+  }
 })();
 
 // Функция открытия и загрытия модального окна "Заказать звонок"
@@ -61,25 +65,25 @@
   var openOrderPopup = function (evt) {
     evt.preventDefault();
     bodyElement.classList.add('no-scroll');
-    orderPopup.classList.add('popup--active');
-  };
+    orderPopup.classList.add('popup--active')
+  }
 
   window.closeOrderPopup = function (evt) {
     evt.preventDefault();
     bodyElement.classList.remove('no-scroll');
-    orderPopup.classList.remove('popup--active');
-  };
+    orderPopup.classList.remove('popup--active')
+  }
 
   window.addEventListener('keydown', function (evt) {
     if (evt.keyCode === ESCAPE) {
       if (orderPopup.classList.contains('popup--active')) {
-        window.closeOrderPopup(evt);
+        closeOrderPopup(evt);
       }
     }
   });
 
   orderButton.addEventListener('click', function (evt) {
-    openOrderPopup(evt);
+    openOrderPopup(evt)
   });
 
   orderClose.addEventListener('click', function (evt) {
@@ -88,7 +92,7 @@
 
   orderOverlay.addEventListener('click', function (evt) {
     window.closeOrderPopup(evt);
-  });
+  })
 })();
 
 // Функция реализации модального окна "Заявка отправлена"
@@ -100,20 +104,20 @@
   var contactsButton = document.querySelector('.contacts__form-btn');
   var popupSuccess = document.querySelector('.popup--success');
   var overlaySuccess = document.querySelector('.popup__overlay--success');
-  var popupCloseSuccess = document.querySelector('.popup__close--success');
+  var popupCloseSuccess = document.querySelector('.popup__close--success')
   var popupOrderButton = document.querySelector('.popup__button--order');
   var popupSuccessButton = document.querySelector('.popup__button--success');
 
   var openSuccessPopup = function (evt) {
     evt.preventDefault();
-    popupSuccess.classList.add('popup--active');
+    popupSuccess.classList.add('popup--active')
     bodyElement.classList.add('no-scroll');
-  };
+  }
 
   var closeSuccessPopup = function () {
     popupSuccess.classList.remove('popup--active');
     bodyElement.classList.remove('no-scroll');
-  };
+  }
 
   window.addEventListener('keydown', function (evt) {
     if (evt.keyCode === ESCAPE) {
@@ -138,5 +142,26 @@
   popupOrderButton.addEventListener('click', function (evt) {
     window.closeOrderPopup(evt);
     openSuccessPopup(evt);
-  });
+  })
+})();
+
+// Добавляет окрытие и закрытие вопроса в блоке "Частые воросы"
+
+(function () {
+  var questionsItem = document.querySelectorAll('.questions__item');
+  var questionsButton = document.querySelectorAll('.questions__heading')
+
+  var activeItem = function (item, index) {
+    item.addEventListener('click', function () {
+      for (var i = 0; i < questionsItem.length; i++) {
+        if (index === i) {
+          questionsItem[i].classList.toggle('questions__item--active');
+        }
+      }
+    });
+  };
+
+  for (var i = 0; i < questionsButton.length; i++) {
+    activeItem(questionsButton[i], i);
+  }
 })();

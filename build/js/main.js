@@ -1,5 +1,7 @@
 'use strict';
 
+// Якорный скролл
+
 (function () {
   var scrollButton = document.querySelector('.page-header__button');
   var aboutSection = document.querySelector('.about');
@@ -14,34 +16,40 @@
   });
 })();
 
+// Реализация табов
+
 (function () {
   var tabsButtons = document.querySelectorAll('.controls__item');
   var tabsElement = document.querySelectorAll('.tabs__item');
 
   var activeTabsButton = function (indexButtons) {
-    tabsButtons.forEach(function (item) {
-      item.classList.remove('controls__item--active');
-      if (indexButtons === item) {
-        item.classList.add('controls__item--active');
+    for (var i = 0; i < tabsButtons.length; i++) {
+      tabsButtons[i].classList.remove('controls__item--active');
+      if (indexButtons === tabsButtons[i]) {
+        tabsButtons[i].classList.add('controls__item--active');
       }
-    });
+    }
+  }
+
+  var activeTabsElement = function (element) {
+    for (var i = 0; i < tabsElement.length; i++) {
+      tabsElement[i].classList.remove('tabs__item--active');
+      if (i === element) {
+        tabsElement[i].classList.add('tabs__item--active');
+      }
+    }
   };
 
-  var activeTabsElement = function (indexElement) {
-    tabsElement.forEach(function (item, index) {
-      item.classList.remove('tabs__item--active');
-      if (index === indexElement) {
-        item.classList.add('tabs__item--active');
-      }
-    });
-  };
-
-  tabsButtons.forEach(function (item, index) {
+  var activeTab = function (item, index) {
     item.addEventListener('click', function () {
       activeTabsElement(index);
       activeTabsButton(item);
     });
-  });
+  }
+
+  for (var i = 0; i < tabsButtons.length; i++) {
+    activeTab(tabsButtons[i], i)
+  }
 })();
 
 // Функция открытия и загрытия модального окна "Заказать звонок"
@@ -137,3 +145,23 @@
   })
 })();
 
+// Добавляет окрытие и закрытие вопроса в блоке "Частые воросы"
+
+(function () {
+  var questionsItem = document.querySelectorAll('.questions__item');
+  var questionsButton = document.querySelectorAll('.questions__heading')
+
+  var activeItem = function (item, index) {
+    item.addEventListener('click', function () {
+      for (var i = 0; i < questionsItem.length; i++) {
+        if (index === i) {
+          questionsItem[i].classList.toggle('questions__item--active');
+        }
+      }
+    });
+  };
+
+  for (var i = 0; i < questionsButton.length; i++) {
+    activeItem(questionsButton[i], i);
+  }
+})();
