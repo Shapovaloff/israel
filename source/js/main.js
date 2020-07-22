@@ -1,5 +1,23 @@
 'use strict';
 
+// Якорный скролл
+
+(function () {
+  var scrollButton = document.querySelector('.page-header__button');
+  var aboutSection = document.querySelector('.about');
+
+  scrollButton.addEventListener('click', function (evt) {
+    evt.preventDefault();
+
+    aboutSection.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    });
+  });
+})();
+
+// Реализация табов
+
 (function () {
   var tabsButtons = document.querySelectorAll('.controls__item');
   var tabsElement = document.querySelectorAll('.tabs__item');
