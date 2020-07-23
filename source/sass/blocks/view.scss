@@ -3,7 +3,11 @@
   margin: 0 auto;
   padding-top: calc(12% - 10px);
   padding-bottom: calc(15% - 10px);
-  background-image: url("../../img/view-bg-desktop@1x.png");
+  background-image: url("../img/view-watercolor-desktop@1x.jpg");
+
+  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+    background-image: url("../img/view-watercolor-desktop@2x.jpg");
+  }
   background-position: 3px 34px;
   background-repeat: no-repeat;
   background-size: 100%;
@@ -67,7 +71,12 @@
 @media (max-width: $mobile-width) {
   .view {
     padding-top: 31px;
-    background-image: url("../img/view-bg-mobile@1x.png");
+    background-image: url("../img/view-watercolor-mobile@1x.png");
+
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      background-image: url("../img/view-watercolor-mobile@2x.png");
+    }
+
     background-position: calc(50% + 87px) 74px;
     background-size: 632px;
   }

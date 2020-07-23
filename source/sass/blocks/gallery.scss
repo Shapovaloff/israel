@@ -2,11 +2,15 @@
   position: relative;
   max-width: 1366px;
   margin: 0 auto;
-  background-image: url("../img/gallery-watercolor.png");
+  background-image: url("../img/gallery-watercolor-desktop@1x.png");
   background-position: center -44px;
   background-repeat: no-repeat;
   background-size: 100%;
   padding-bottom: 96px;
+
+  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+    background-image: url("../img/gallery-watercolor-desktop@2x.png");
+  }
 
   &::before {
     content: "";
@@ -15,7 +19,13 @@
     right: 0;
     width: 97px;
     height: 148px;
-    background-image: url("../img/gallery-watch.png");
+    background-image: url("../img/gallery-watch-desktop@1x.png");
+
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      background-image: url("../img/gallery-watch-desktop@2x.png");
+    }
+
+    background-size: contain;
     background-position: center right;
     background-repeat: no-repeat;
   }
@@ -26,7 +36,6 @@
   margin: 0 auto;
   padding-left: calc(8% + 1px);
   padding-right: calc(8% + 1px);
-
 }
 
 .gallery__title {
@@ -183,7 +192,6 @@
 
   .gallery__description {
     padding-left: 16px;
-    padding-right: 16px;
     padding-right: 12px;
     margin-bottom: 28px;
     text-align: left;
@@ -216,7 +224,6 @@
     text-align: center;
     left: 50%;
     transform: translateX(-50%);
-
   }
 
   .gallery__dots {

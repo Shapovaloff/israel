@@ -2,10 +2,14 @@
   position: relative;
   max-width: 1366px;
   margin: 0 auto;
-  background-image: url("../img/reviews-watercolor-desktop.png");
+  background-image: url("../img/reviews-watercolor-desktop@1x.png");
   background-repeat: no-repeat;
   background-position: right 20px;
   background-size: 100%;
+
+  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+    background-image: url("../img/reviews-watercolor-desktop@2x.png");
+  }
 
   &::before {
     content: "";
@@ -14,9 +18,13 @@
     height: 318px;
     top: 56px;
     right: 0;
-    background-image: url("../img/reviews-sketch-desktop.png");
+    background-image: url("../img/reviews-sketch-desktop@1x.png");
     background-repeat: no-repeat;
     background-position: center;
+
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      background-image: url("../img/reviews-sketch-desktop@2x.png");
+    }
   }
 }
 
@@ -185,16 +193,23 @@
 
 @media (max-width: $mobile-width) {
   .reviews {
-    background-image: url("../img/reviews-watercolor-mobile.png");
+    background-image: url("../img/reviews-watercolor-mobile@1x.png");
     background-position: right 700px;
 
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      background-image: url("../img/reviews-watercolor-mobile@2x.png");
+    }
 
     &::before {
       width: 288px;
       height: 261px;
       top: 525px;
-      background-image: url("../img/reviews-sketch-mobile.png");
+      background-image: url("../img/reviews-sketch-mobile@1x.png");
       background-position: center;
+
+      @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+        background-image: url("../img/reviews-sketch-mobile@2x.png");
+      }
     }
   }
 

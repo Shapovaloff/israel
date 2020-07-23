@@ -12,10 +12,14 @@
     top: 0;
     max-width: 1366px;
     height: 811px;
-    background-image: url("../img/contacts-watercolor.png");
+    background-image: url("../img/contacts-watercolor-desktop@1x.png");
     background-position: center top;
     background-repeat: no-repeat;
     background-size: 100%;
+
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      background-image: url("../img/contacts-watercolor-desktop@2x.png");
+    }
   }
 }
 
@@ -91,7 +95,7 @@
     top: 5px;
     width: 16px;
     height: 15px;
-    background-image: url("../img/icon-gps.svg");
+    background-image: url("../img/gps.svg");
     background-repeat: no-repeat;
   }
 

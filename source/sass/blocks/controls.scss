@@ -115,6 +115,7 @@
     height: auto;
     overflow: hidden;
   }
+
   .controls {
     display: flex;
   }
@@ -131,7 +132,7 @@
     min-height: 48px;
     opacity: 0.4;
     padding: 0 15px 0 52px;
-    min-width: 181px
+    min-width: 181px;
   }
 
   .controls__item--active .controls__button {
@@ -142,7 +143,6 @@
   .controls__item:focus .controls__button {
     opacity: 1;
   }
-
 
   .controls__button::after {
     left: 12px;

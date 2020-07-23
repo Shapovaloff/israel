@@ -47,15 +47,16 @@
           предусмотрен грант от 4200 до 8400$.</p>
         <div class="about__video">
           <picture>
-            <source media="(max-width: 767px)" srcset="img/video-mobile@1x.png">
-
-            <img class="about__video-img" src="img/video-desktop@1x.jpg" width="870" height="460" alt="Ознакомительное видео проекта Израиль">
+            <source type="image/webp" media="(max-width: 767px)" srcset="img/video-mobile@1x.webp 1x, img/video-mobile@2x.webp 2x">
+            <source type="image/webp" srcset="img/video-desktop@1x.webp 1x, img/video-desktop@2x.webp 2x">
+            <!-- 1х: 320x; 2x: 640px -->
+            <source media="(max-width: 767px)" srcset="img/video-mobile@1x.png 1x, img/video-mobile@2x.png 2x">
+            <!-- 1х: 870x; 2x: 1680px -->
+            <img class="about__video-img" src="img/video-desktop@1x.png" srcset="img/video-desktop@2x.png 2x" width="870" height="460" alt="Ознакомительное видео проекта Израиль">
           </picture>
-
           <div class="about__button">
-            <svg class="about__video-btn" width="15" height="19" viewBox="0 0 15 19" fill="#1FC0FC"
-              xmlns="http://www.w3.org/2000/svg">
-              <path d="M15 9.5L0 19V0L15 9.5Z" />
+            <svg class="about__video-btn" width="15" height="19">
+              <use xlink:href="#icon-btn-video"></use>
             </svg>
           </div>
         </div>
@@ -153,9 +154,9 @@
       <div class="preparation__wrapper">
         <div class="preparation__img-block">
           <picture>
-              <source type="image/webp" srcset="img/preparation-bg@1x.webp 1x, img/preparation-bg@2x.webp 2x">
+              <source type="image/webp" srcset="img/preparation-people@1x.webp 1x, img/preparation-people@2x.webp 2x">
               <!-- 1х: 581px; 2x: 1162px -->
-              <img class="preparation__img" width="581" height="707" src="img/preparation-bg@1x.jpg" srcset="img/preparation-bg@2x.jpg 2x" alt="Мужчина и женщина улыбаються">
+              <img class="preparation__img" width="581" height="707" src="img/preparation-people@1x.jpg" srcset="img/preparation-people@2x.jpg 2x" alt="Мужчина и женщина улыбаються">
           </picture>
 
         </div>
@@ -192,46 +193,56 @@
         <ul class="gallery__list swiper-wrapper">
           <li class="gallery__item gallery__item--excursions swiper-slide">
             <picture>
-              <source media="(max-width: 767px)" srcset="img/excursions-mobile@1x.png">
-
-              <img class="gallery__img gallery__img--excursions" width="482" height="732"
-                src="img/excursions-desktop@1x.png" alt="Экскурсии по Израилю">
+              <source type="image/webp" media="(max-width: 767px)" srcset="img/excursions-mobile@1x.webp 1x, img/excursions-mobile@2x.webp 2x">
+              <source type="image/webp" srcset="img/excursions-desktop@1x.webp 1x, img/excursions-desktop@2x.webp 2x">
+              <!-- 1х: 288x; 2x: 576px -->
+              <source media="(max-width: 767px)" srcset="img/excursions-mobile@1x.png 1x, img/excursions-mobile@2x.png 2x">
+              <!-- 1х: 482px; 2x: 964px -->
+              <img class="gallery__img gallery__img--excursions" src="img/excursions-desktop@1x.png" srcset="img/excursions-desktop@2x.png 2x"  width="482" height="732"  alt="Экскурсии по Израилю">
             </picture>
             <p class="gallery__text gallery__text--excursions">Экскурсии по Израилю <br> и знакомство с его историей</p>
           </li>
           <li class="gallery__item gallery__item--stady swiper-slide">
             <picture>
-              <source media="(max-width: 767px)" srcset="img/stady-mobile@1x.png">
-
-              <img class="gallery__img gallery__img--stady" src="img/stady-desktop@1x.png" width="211" height="318"
-                alt="Изучение иврита">
+              <source type="image/webp" media="(max-width: 767px)" srcset="img/stady-mobile@1x.webp 1x, img/stady-mobile@2x.webp 2x">
+              <source type="image/webp" srcset="img/stady-desktop@1x.webp 1x, img/stady-desktop@2x.webp 2x">
+              <!-- 1х: 288x; 2x: 576px -->
+              <source media="(max-width: 767px)" srcset="img/stady-mobile@1x.png 1x, img/stady-mobile@2x.png 2x">
+              <!-- 1х: 211px; 2x: 422px -->
+              <img class="gallery__img gallery__img--stady" src="img/stady-desktop@1x.png" srcset="img/stady-desktop@2x.png 2x" width="211" height="318" alt="Изучение иврита">
             </picture>
             <p class="gallery__text gallery__text--stady">Изучение иврита</p>
           </li>
           <li class="gallery__item gallery__item--skills swiper-slide">
             <picture>
-              <source media="(max-width: 767px)" srcset="img/skills-mobile@1x.png">
-
-              <img class="gallery__img gallery__img--skills" src="img/skills-desktop@1x.png" width="411" height="318"
-                alt="Обучение современным навыкам и профессиям">
+              <source type="image/webp" media="(max-width: 767px)" srcset="img/skills-mobile@1x.webp 1x, img/skills-mobile@2x.webp 2x">
+              <source type="image/webp" srcset="img/skills-desktop@1x.webp 1x, img/skills-desktop@2x.webp 2x">
+              <!-- 1х: 288x; 2x: 576px -->
+              <source media="(max-width: 767px)" srcset="img/skills-mobile@1x.png 1x, img/skills-mobile@2x.png 2x">
+              <!-- 1х: 482px; 2x: 964px -->
+              <img class="gallery__img gallery__img--skills" src="img/skills-desktop@1x.png" srcset="img/skills-desktop@2x.png 2x" width="411" height="318" alt="Обучение современным навыкам и профессиям">
             </picture>
             <p class="gallery__text gallery__text--skills">Обучение современным навыкам и профессиям</p>
           </li>
           <li class="gallery__item gallery__item--creation swiper-slide">
             <picture>
-              <source media="(max-width: 767px)" srcset="img/creation-mobile@1x.png">
-
-              <img class="gallery__img gallery__img--creation" src="img/creation-desktop@1x.png" width="411"
-                height="318" alt="Совместные творческие проекты с израильской молодёжью">
+              <source type="image/webp" media="(max-width: 767px)" srcset="img/creation-mobile@1x.webp 1x, img/creation-mobile@2x.webp 2x">
+              <source type="image/webp" srcset="img/creation-desktop@1x.webp 1x, img/creation-desktop@2x.webp 2x">
+              <!-- 1х: 288x; 2x: 576px -->
+              <source media="(max-width: 767px)" srcset="img/creation-mobile@1x.png 1x, img/creation-mobile@2x.png 2x">
+              <!-- 1х: 482px; 2x: 964px -->
+              <img class="gallery__img gallery__img--creation" src="img/creation-desktop@1x.png" srcset="img/creation-desktop@2x.png 2x" width="411" height="318" alt="Совместные творческие проекты с израильской молодёжью">
             </picture>
             <p class="gallery__text gallery__text--creation">Совместные творческие проекты с израильской молодёжью</p>
           </li>
           <li class="gallery__item gallery__item--development swiper-slide">
             <picture>
-              <source media="(max-width: 767px)" srcset="img/development-mobile@1x.png">
-
-              <img class="gallery__img gallery__img--development" src="img/development-desktop@1x.png" width="214"
-                height="318" alt="Развитие лидерства">
+              <source type="image/webp" media="(max-width: 767px)" srcset="img/development-mobile@1x.webp 1x, img/development-mobile@2x.webp 2x">
+              <source type="image/webp" srcset="img/development-desktop@1x.webp 1x, img/development-desktop@2x.webp 2x">
+              <!-- 1х: 288x; 2x: 576px -->
+              <source media="(max-width: 767px)" srcset="img/development-mobile@1x.png 1x, img/development-mobile@2x.png 2x">
+              <!-- 1х: 482px; 2x: 964px -->
+              <img class="gallery__img gallery__img--development" src="img/development-desktop@1x.png" srcset="img/development-desktop@2x.png 2x" width="214" height="318" alt="Развитие лидерства">
             </picture>
             <p class="gallery__text gallery__text--development">Развитие лидерства</p>
           </li>
@@ -243,8 +254,7 @@
     <section class="view">
       <div class="view__wrapper">
         <h2 class="title view__title">#masaisrael</h2>
-        <p class="view__description">Познакомьтесь с программой <br> от первого лица! Многие участники ведут блоги и
-          фотодневники <br> о жизни, учёбе и путешествиях <br> в Израиле.</p>
+        <p class="view__description">Познакомьтесь с программой <br> от первого лица! Многие участники ведут блоги и фотодневники <br> о жизни, учёбе и путешествиях <br> в Израиле.</p>
         <a class="button view__button" href="#" aria-label="Ссылка на инстраграмм">
           <svg class="view__button-icon" width="24" height="24">
             <use xlink:href="#icon-instagram"></use>
@@ -301,7 +311,11 @@
         </div>
 
         <div class="questions__img-block">
-          <img src="img/qestions-people-desktop@1x.png" alt="">
+          <picture>
+            <source type="image/webp" srcset="img/qestions-people-desktop@1x.webp 1x, img/qestions-people-desktop@2x.webp 2x">
+            <!-- 1х: 645px; 2x: 1290px -->
+            <img class="questions__img" src="img/qestions-people-desktop@1x.png" srcset="img/qestions-people-desktop@2x.png 2x" width="645" height="803" alt="Частые вопросы">
+          </picture>
         </div>
       </div>
     </section>
@@ -314,9 +328,12 @@
           <li class="reviews__item swiper-slide">
             <div class="reviews__photo-block">
               <picture>
-                <source media="(max-width: 767px)" srcset="img/reviews-photo-mobile@1x.png">
-                <img class="reviews__photo" src="img/reviews-photo-desktop@1x.png" width="364" height="480"
-                  alt="Фото Ольги Михайловой">
+                <source type="image/webp" media="(max-width: 767px)" srcset="img/reviews-photo-mobile@1x.webp 1x, img/reviews-photo-mobile@2x.webp 2x">
+                <source type="image/webp" srcset="img/reviews-photo-desktop@1x.webp 1x, img/reviews-photo-desktop@2x.webp 2x">
+                <!-- 1х: 240x; 2x: 480px -->
+                <source media="(max-width: 767px)" srcset="img/reviews-photo-mobile@1x.png 1x, img/reviews-photo-mobile@2x.png 2x">
+                <!-- 1х: 364px; 2x: 728px -->
+                <img class="reviews__photo" src="img/reviews-photo-desktop@1x.png" srcset="img/reviews-photo-desktop@2x.png 2x" width="364" height="480" alt="Фото Ольги Михайловой">
               </picture>
             </div>
             <div class="reviews__content">
@@ -357,9 +374,12 @@
           <li class="reviews__item swiper-slide">
             <div class="reviews__photo-block">
               <picture>
-                <source media="(max-width: 767px)" srcset="img/reviews-photo-mobile@1x.png">
-                <img class="reviews__photo" src="img/reviews-photo-desktop@1x.png" width="364" height="480"
-                  alt="Фото Ольги Михайловой">
+                <source type="image/webp" media="(max-width: 767px)" srcset="img/reviews-photo-mobile@1x.webp 1x, img/reviews-photo-mobile@2x.webp 2x">
+                <source type="image/webp" srcset="img/reviews-photo-desktop@1x.webp 1x, img/reviews-photo-desktop@2x.webp 2x">
+                <!-- 1х: 240x; 2x: 480px -->
+                <source media="(max-width: 767px)" srcset="img/reviews-photo-mobile@1x.png 1x, img/reviews-photo-mobile@2x.png 2x">
+                <!-- 1х: 364px; 2x: 728px -->
+                <img class="reviews__photo" src="img/reviews-photo-desktop@1x.png" srcset="img/reviews-photo-desktop@2x.png 2x" width="364" height="480" alt="Фото Ольги Михайловой">
               </picture>
             </div>
             <div class="reviews__content">
@@ -400,9 +420,12 @@
           <li class="reviews__item swiper-slide">
             <div class="reviews__photo-block">
               <picture>
-                <source media="(max-width: 767px)" srcset="img/reviews-photo-mobile@1x.png">
-                <img class="reviews__photo" src="img/reviews-photo-desktop@1x.png" width="364" height="480"
-                  alt="Фото Ольги Михайловой">
+                <source type="image/webp" media="(max-width: 767px)" srcset="img/reviews-photo-mobile@1x.webp 1x, img/reviews-photo-mobile@2x.webp 2x">
+                <source type="image/webp" srcset="img/reviews-photo-desktop@1x.webp 1x, img/reviews-photo-desktop@2x.webp 2x">
+                <!-- 1х: 240x; 2x: 480px -->
+                <source media="(max-width: 767px)" srcset="img/reviews-photo-mobile@1x.png 1x, img/reviews-photo-mobile@2x.png 2x">
+                <!-- 1х: 364px; 2x: 728px -->
+                <img class="reviews__photo" src="img/reviews-photo-desktop@1x.png" srcset="img/reviews-photo-desktop@2x.png 2x" width="364" height="480" alt="Фото Ольги Михайловой">
               </picture>
             </div>
             <div class="reviews__content">
@@ -443,9 +466,12 @@
           <li class="reviews__item swiper-slide">
             <div class="reviews__photo-block">
               <picture>
-                <source media="(max-width: 767px)" srcset="img/reviews-photo-mobile@1x.png">
-                <img class="reviews__photo" src="img/reviews-photo-desktop@1x.png" width="364" height="480"
-                  alt="Фото Ольги Михайловой">
+                <source type="image/webp" media="(max-width: 767px)" srcset="img/reviews-photo-mobile@1x.webp 1x, img/reviews-photo-mobile@2x.webp 2x">
+                <source type="image/webp" srcset="img/reviews-photo-desktop@1x.webp 1x, img/reviews-photo-desktop@2x.webp 2x">
+                <!-- 1х: 240x; 2x: 480px -->
+                <source media="(max-width: 767px)" srcset="img/reviews-photo-mobile@1x.png 1x, img/reviews-photo-mobile@2x.png 2x">
+                <!-- 1х: 364px; 2x: 728px -->
+                <img class="reviews__photo" src="img/reviews-photo-desktop@1x.png" srcset="img/reviews-photo-desktop@2x.png 2x" width="364" height="480" alt="Фото Ольги Михайловой">
               </picture>
             </div>
             <div class="reviews__content">
@@ -486,9 +512,12 @@
           <li class="reviews__item swiper-slide">
             <div class="reviews__photo-block">
               <picture>
-                <source media="(max-width: 767px)" srcset="img/reviews-photo-mobile@1x.png">
-                <img class="reviews__photo" src="img/reviews-photo-desktop@1x.png" width="364" height="480"
-                  alt="Фото Ольги Михайловой">
+                <source type="image/webp" media="(max-width: 767px)" srcset="img/reviews-photo-mobile@1x.webp 1x, img/reviews-photo-mobile@2x.webp 2x">
+                <source type="image/webp" srcset="img/reviews-photo-desktop@1x.webp 1x, img/reviews-photo-desktop@2x.webp 2x">
+                <!-- 1х: 240x; 2x: 480px -->
+                <source media="(max-width: 767px)" srcset="img/reviews-photo-mobile@1x.png 1x, img/reviews-photo-mobile@2x.png 2x">
+                <!-- 1х: 364px; 2x: 728px -->
+                <img class="reviews__photo" src="img/reviews-photo-desktop@1x.png" srcset="img/reviews-photo-desktop@2x.png 2x" width="364" height="480" alt="Фото Ольги Михайловой">
               </picture>
             </div>
             <div class="reviews__content">
@@ -529,9 +558,12 @@
           <li class="reviews__item swiper-slide">
             <div class="reviews__photo-block">
               <picture>
-                <source media="(max-width: 767px)" srcset="img/reviews-photo-mobile@1x.png">
-                <img class="reviews__photo" src="img/reviews-photo-desktop@1x.png" width="364" height="480"
-                  alt="Фото Ольги Михайловой">
+                <source type="image/webp" media="(max-width: 767px)" srcset="img/reviews-photo-mobile@1x.webp 1x, img/reviews-photo-mobile@2x.webp 2x">
+                <source type="image/webp" srcset="img/reviews-photo-desktop@1x.webp 1x, img/reviews-photo-desktop@2x.webp 2x">
+                <!-- 1х: 240x; 2x: 480px -->
+                <source media="(max-width: 767px)" srcset="img/reviews-photo-mobile@1x.png 1x, img/reviews-photo-mobile@2x.png 2x">
+                <!-- 1х: 364px; 2x: 728px -->
+                <img class="reviews__photo" src="img/reviews-photo-desktop@1x.png" srcset="img/reviews-photo-desktop@2x.png 2x" width="364" height="480" alt="Фото Ольги Михайловой">
               </picture>
             </div>
             <div class="reviews__content">
@@ -588,7 +620,11 @@
             <button type="button" class="contacts__sity-btn">новосибирск</button>
           </div>
           <div class="contacts__curator curator">
-            <img class="curator__img" width="112" height="112" src="img/contacts-photo.jpg" alt="Фото куратора">
+            <picture>
+              <source type="image/webp" srcset="img/contacts-photo@1x.webp 1x, img/contacts-photo@2x.webp 2x">
+              <!-- 1х: 112px; 2x: 224px -->
+              <img class="curator__img" src="img/contacts-photo@1x.png" srcset="img/contacts-photo@2x.png 2x" width="112" height="112" alt="Фото куратора">
+            </picture>
             <div class="curator__info">
               <p><span>Ваш куратор:</span> Анна Горелик</p>
               <p>Новосибирск, ул. Щетинкина 68, культурный центр «Бейт Менахем»</p>
@@ -617,17 +653,18 @@
               </ul>
             </div>
           </div>
-          <p class="contacts__description">Куратор является опытным специалистом агентства Сохнут <br> и знает о проекте
-            «Маса» всё! Свяжитесь с куратором, <br> узнайте подробнее о программах и выберите свою !</p>
+          <p class="contacts__description">Куратор является опытным специалистом агентства Сохнут <br> и знает о проекте «Маса» всё! Свяжитесь с куратором, <br> узнайте подробнее о программах и выберите свою !</p>
         </div>
 
         <div class="contacts__map">
           <picture>
-            <source media="(max-width: 767px)" srcset="img/map-mobile@1x.png">
-            <img class="contacts__map-img" src="img/map-desktop@1x.png"
-              alt="Новосибирск, ул. Щетинкина 68, культурный центр «Бейт Менахем»">
+            <source type="image/webp" media="(max-width: 767px)" srcset="img/map-mobile@1x.webp 1x, img/map-mobile@2x.webp 2x">
+            <source type="image/webp" srcset="img/map-desktop@1x.webp 1x, img/map-desktop@2x.webp 2x">
+            <!-- 1х: 320x; 2x: 640px -->
+            <source media="(max-width: 767px)" srcset="img/map-mobile@1x.png 1x, img/map-mobile@2x.png 2x">
+            <!-- 1х: 702px; 2x: 1404px -->
+            <img class="contacts__map-img" src="img/map-desktop@1x.png" srcset="img/map-desktop@2x.png 2x" width="702" height="448" alt="Новосибирск, ул. Щетинкина 68, культурный центр «Бейт Менахем»">
           </picture>
-
         </div>
       </div>
       <div class="contacts__feedback">
@@ -653,7 +690,14 @@
   <footer class="page-footer">
     <div class="page-footer__wrapper">
       <a class="page-footer__logo" href="#">
-        <img class="page-footer__logo-img" src="img/logo-footer.png" width="85" height="27" alt="Логотип">
+        <picture>
+          <source type="image/webp" media="(max-width: 767px)" srcset="img/logo-footer-mobile@1x.webp 1x, img/logo-footer-mobile@2x.webp 2x">
+          <source type="image/webp" srcset="img/logo-footer-desktop@1x.webp 1x, img/logo-footer-desktop@2x.webp 2x">
+          <!-- 1х: 99x; 2x: 198px -->
+          <source media="(max-width: 767px)" srcset="img/logo-footer-mobile@1x.png 1x, img/logo-footer-mobile@2x.png 2x">
+          <!-- 1х: 85px; 2x: 170px -->
+          <img class="page-footer__logo-img" src="img/logo-footer-desktop@1x.png" srcset="img/logo-footer-desktop@2x.png 2x" width="85" height="27" alt="Логотип">
+        </picture>
       </a>
       <b class="page-footer__copyright">Copyright someDesignCompany ©2019</b>
       <ul class="page-footer__social social social--page-footer">
