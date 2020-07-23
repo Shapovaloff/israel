@@ -29,7 +29,7 @@
         tabsButtons[i].classList.add('controls__item--active');
       }
     }
-  }
+  };
 
   var activeTabsElement = function (element) {
     for (var i = 0; i < tabsElement.length; i++) {
@@ -45,10 +45,10 @@
       activeTabsElement(index);
       activeTabsButton(item);
     });
-  }
+  };
 
   for (var i = 0; i < tabsButtons.length; i++) {
-    activeTab(tabsButtons[i], i)
+    activeTab(tabsButtons[i], i);
   }
 })();
 
@@ -68,24 +68,24 @@
     bodyElement.classList.add('no-scroll');
     orderPopup.classList.add('popup--active');
     fieldName.focus();
-  }
+  };
 
   window.closeOrderPopup = function (evt) {
     evt.preventDefault();
     bodyElement.classList.remove('no-scroll');
     orderPopup.classList.remove('popup--active');
-  }
+  };
 
   window.addEventListener('keydown', function (evt) {
     if (evt.keyCode === ESCAPE) {
       if (orderPopup.classList.contains('popup--active')) {
-        closeOrderPopup(evt);
+        window.closeOrderPopup(evt);
       }
     }
   });
 
   orderButton.addEventListener('click', function (evt) {
-    openOrderPopup(evt)
+    openOrderPopup(evt);
   });
 
   orderClose.addEventListener('click', function (evt) {
@@ -94,14 +94,14 @@
 
   orderOverlay.addEventListener('click', function (evt) {
     window.closeOrderPopup(evt);
-  })
+  });
 })();
 
 // Добавляет окрытие и закрытие вопроса в блоке "Частые воросы"
 
 (function () {
   var questionsItem = document.querySelectorAll('.questions__item');
-  var questionsButton = document.querySelectorAll('.questions__heading')
+  var questionsButton = document.querySelectorAll('.questions__heading');
 
   var activeItem = function (item, index) {
     item.addEventListener('click', function () {
@@ -139,14 +139,18 @@
 // Функция валидации формы
 
 (function () {
+  var TYPE_NAME = 'text';
+  var TYPE_CHECKBOX = 'checkbox';
+  var TYPE_TEL = 'tel';
+
   var validatesField = function (fieldsName, evt) {
-    if (fieldsName.type === "text" && fieldsName.value.length < 2) {
+    if (fieldsName.type === TYPE_NAME && fieldsName.value.length < 2) {
       evt.preventDefault();
       fieldsName.classList.add('input--invalid');
-    } else if (fieldsName.type === "checkbox" && !fieldsName.checked) {
+    } else if (fieldsName.type === TYPE_CHECKBOX && !fieldsName.checked) {
       evt.preventDefault();
       fieldsName.classList.add('input--invalid');
-    } else if (fieldsName.type === "tel" && fieldsName.value.length < 18) {
+    } else if (fieldsName.type === TYPE_TEL && fieldsName.value.length < 18) {
       evt.preventDefault();
       fieldsName.classList.add('input--invalid');
     }
@@ -154,22 +158,22 @@
 
   var requiredField = function (fieldsName) {
     fieldsName.addEventListener('input', function () {
-      if (fieldsName.type === "text" && fieldsName.value > 2) {
+      if (fieldsName.type === TYPE_NAME && fieldsName.value > 2) {
         fieldsName.classList.remove('input--invalid');
-      } else if (fieldsName.type === "checkbox" && fieldsName.checked) {
+      } else if (fieldsName.type === TYPE_CHECKBOX && fieldsName.checked) {
         fieldsName.classList.remove('input--invalid');
-      } else if (fieldsName.type === "tel" && fieldsName.value.length >= 18) {
+      } else if (fieldsName.type === TYPE_TEL && fieldsName.value.length >= 18) {
         fieldsName.classList.remove('input--invalid');
       }
-    })
-  }
+    });
+  };
 
   window.validatesForm = function (fields, evt) {
     for (var i = 0; i < fields.length; i++) {
       validatesField(fields[i], evt);
       requiredField(fields[i]);
     }
-  }
+  };
 })();
 
 // Функция реализации модального окна "Заявка отправлена"
@@ -179,19 +183,19 @@
   var bodyElement = document.querySelector('body');
   var popupSuccess = document.querySelector('.popup--success');
   var overlaySuccess = document.querySelector('.popup__overlay--success');
-  var popupCloseSuccess = document.querySelector('.popup__close--success')
+  var popupCloseSuccess = document.querySelector('.popup__close--success');
   var popupSuccessButton = document.querySelector('.popup__button--success');
 
   window.openSuccessPopup = function (evt) {
     evt.preventDefault();
-    popupSuccess.classList.add('popup--active')
+    popupSuccess.classList.add('popup--active');
     bodyElement.classList.add('no-scroll');
-  }
+  };
 
   var closeSuccessPopup = function () {
     popupSuccess.classList.remove('popup--active');
     bodyElement.classList.remove('no-scroll');
-  }
+  };
 
   window.addEventListener('keydown', function (evt) {
     if (evt.keyCode === ESCAPE) {
@@ -215,12 +219,12 @@
   var popupPhone = popupForm.querySelector('input[type="tel"]');
   var popupCheckbox = popupForm.querySelector('input[type="checkbox"]');
 
-  var contactsForm = document.querySelector('.contacts__form')
+  var contactsForm = document.querySelector('.contacts__form');
   var contactsFields = contactsForm.querySelectorAll('input');
   var contactsName = contactsForm.querySelector('input[type="text"]');
   var contactsPhone = contactsForm.querySelector('input[type="tel"]');
 
-  var feedbackForm = document.querySelector('.feedback__form')
+  var feedbackForm = document.querySelector('.feedback__form');
   var feedbackFields = feedbackForm.querySelectorAll('input');
   var feedbackPhone = feedbackForm.querySelector('input[type="tel"]');
 
@@ -231,6 +235,9 @@
     } else {
       window.closeOrderPopup(evt);
       window.openSuccessPopup(evt);
+      popupName.value = '';
+      popupPhone.value = '';
+      popupCheckbox.checked = false;
     }
   });
 
@@ -239,6 +246,8 @@
       window.validatesForm(contactsFields, evt);
     } else {
       window.openSuccessPopup(evt);
+      contactsName.value = '';
+      contactsPhone.value = '';
     }
   });
 
@@ -247,6 +256,101 @@
       window.validatesForm(feedbackFields, evt);
     } else {
       window.openSuccessPopup(evt);
+      feedbackPhone.value = '';
     }
   });
+})();
+
+// Функция слайдер в блоке отзывы
+
+(function () {
+  var reviewsSlider = new Swiper('.reviews__wrapper', {
+    direction: 'horizontal',
+    loop: true,
+    pagination: {
+      el: '.reviews__pagination',
+      type: 'fraction',
+    },
+    navigation: {
+      nextEl: '.reviews__btn--next',
+      prevEl: '.reviews__btn--prev',
+    },
+  });
+
+})();
+
+// Функция слайдер в блоке "Жизнь в Израиле"
+
+(function () {
+  var gallerySlider = document.querySelector('.swiper-container');
+
+  var breakpoint = window.matchMedia('(min-width:768px)');
+  var mySwiper;
+  var breakpointChecker = function () {
+    if (breakpoint.matches === true) {
+      if (mySwiper) {
+        mySwiper.destroy(true, true);
+      }
+      return;
+    } else if (breakpoint.matches === false) {
+      enableSwiper();
+    }
+  };
+
+
+  var enableSwiper = function () {
+    if (gallerySlider) {
+      mySwiper = new window.Swiper(gallerySlider, {
+        direction: 'horizontal',
+        loop: true,
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+          bulletClass: 'gallery__dot',
+          bulletActiveClass: 'gallery__dot--active',
+        },
+      });
+    }
+  };
+
+  breakpoint.addListener(breakpointChecker);
+  breakpointChecker();
+})();
+
+// Функция реализации прокрутки табов
+
+(function () {
+  var programsTabs = document.querySelector('.programs__controls-block');
+
+  var breakpoint = window.matchMedia('(min-width:768px)');
+  var mySwiper;
+  var breakpointChecker = function () {
+    if (breakpoint.matches === true) {
+      if (mySwiper) {
+        mySwiper.destroy(true, true);
+      }
+      return;
+    } else if (breakpoint.matches === false) {
+      enableSwiper();
+    }
+  };
+
+
+  var enableSwiper = function () {
+    if (programsTabs) {
+      mySwiper = new window.Swiper(programsTabs, {
+        direction: 'horizontal',
+        slidesPerView: 1.7,
+        centeredSlides: true,
+        spaceBetween: 30,
+        grabCursor: true,
+        pagination: {
+          clickable: true,
+        },
+      });
+    }
+  };
+
+  breakpoint.addListener(breakpointChecker);
+  breakpointChecker();
 })();

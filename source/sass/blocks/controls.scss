@@ -1,6 +1,9 @@
 .controls {
   @include reset-list;
   width: 228px;
+  height: auto;
+  display: block;
+  box-sizing: border-box;
 }
 
 .controls__item {
@@ -112,6 +115,9 @@
     height: auto;
     overflow: hidden;
   }
+  .controls {
+    display: flex;
+  }
 
   .controls__item {
     border-radius: 60px;
@@ -121,10 +127,11 @@
     }
   }
 
-  .controls__button {
-    opacity: 0.4;
+  .controls__item .controls__button {
     min-height: 48px;
-    padding: 15px 12px 14px 52px;
+    opacity: 0.4;
+    padding: 0 15px 0 52px;
+    min-width: 181px
   }
 
   .controls__item--active .controls__button {
