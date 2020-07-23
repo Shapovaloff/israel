@@ -18,10 +18,13 @@
     <div class="page-header__wrapper container">
       <nav class="page-header__nav">
         <a href="#" class="page-header__logo" aria-label="Ссылка на главную страницу">
-          <img src="img/logo.png" alt="Логотип">
+          <picture>
+            <source type="image/webp" srcset="img/logo-header@1x.webp 1x, img/logo-header@2x.webp 2x">
+
+            <img src="img/logo-header@1x.png" srcset="img/logo-header@2x.png 2x" width="137" height="48" alt="Логотип компании MASA">
+          </picture>
         </a>
-        <a class="page-header__phone" href="tel:+(972)2–621–6581" aria-label="телефон компании">+ (972) 2 – 621 –
-          6581</a>
+        <a class="page-header__phone" href="tel:+(972)2–621–6581" aria-label="телефон компании">+ (972) 2 – 621 – 6581</a>
         <a href="#" class="page-header__order">заказать звонок</a>
       </nav>
       <h3 class="page-header__text">Учёба, путешествие и карьера<br> для еврейской молодёжи</h3>
@@ -44,6 +47,7 @@
         <div class="about__video">
           <picture>
             <source media="(max-width: 767px)" srcset="img/video-mobile@1x.png">
+
             <img class="about__video-img" src="img/video-desktop@1x.jpg" width="870" height="460" alt="Ознакомительное видео проекта Израиль">
           </picture>
 
@@ -146,7 +150,23 @@
     <section class="preparation">
       <div class="preparation__wrapper">
         <div class="preparation__img-block">
-          <img class="preparation__img" width="581" height="707" src="img/preparation-bg.jpg" alt="Довольные люди">
+
+          <!-- <picture>
+            <source type="image/webp" media="(min-width: 1300px)" srcset="img/index-can-desktop@1x.webp 1x, img/index-can-desktop@2x.webp 2x">
+            <source type="image/webp" media="(min-width: 768px)" srcset="img/index-can-tablet@1x.webp 1x, img/index-can-tablet@2x.webp 2x">
+            <source type="image/webp" srcset="img/index-can-mobile@1x.webp 1x, img/index-can-mobile@2x.webp 2x">
+
+            <source media="(min-width: 1300px)" srcset="img/index-can-desktop@1x.png 1x, img/index-can-desktop@2x.png 2x">
+            <source media="(min-width: 768px)" srcset="img/index-can-tablet@1x.jpg 1x, img/index-can-tablet@2x.jpg 2x" >
+            <img class="promo__img" src="img/index-can-mobile@1x.png" srcset="img/index-can-mobile@2x.png 2x" width="280" height="270" alt="Cat energy PRO с курицей" >
+          </picture> -->
+
+          <picture>
+              <source type="image/webp" srcset="img/preparation-bg@1x.webp 1x, img/preparation-bg@2x.webp 2x">
+              <!-- 1х: 581px; 2x: 1162px -->
+              <img class="preparation__img" width="581" height="707" src="img/preparation-bg@1x.jpg" srcset="img/preparation-bg@2x.jpg 2x" alt="Мужчина и женщина улыбаються">
+          </picture>
+
         </div>
         <div class="preparation__content">
           <h2 class="title">Как поехать</h2>
