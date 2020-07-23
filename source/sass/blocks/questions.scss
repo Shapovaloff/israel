@@ -2,8 +2,8 @@
   position: relative;
   max-width: 1366px;
   margin: 0 auto;
-  padding-top: 10%;
-  padding-bottom: calc(9% - 3px);
+  padding-top: 136px;
+  padding-bottom: 120px;
   background-image: url("../img/questions-watercolor-desktop@1x.png");
 
   @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
@@ -11,7 +11,7 @@
   }
 
   background-size: contain;
-  background-position: center 57px;
+  background-position: left 57px;
   background-repeat: no-repeat;
 
   &::before {

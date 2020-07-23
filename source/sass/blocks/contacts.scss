@@ -50,7 +50,11 @@
     top: 2px;
     width: 12px;
     height: 18px;
-    background-image: url("../img/icon-marker.svg");
+    background-image: url("../img/marker@1x.png");
+
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      background-image: url("../img/marker@2x.png");
+    }
   }
 }
 

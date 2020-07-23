@@ -21,6 +21,7 @@
     background-image: url("../img/reviews-sketch-desktop@1x.png");
     background-repeat: no-repeat;
     background-position: center;
+    background-size: contain;
 
     @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
       background-image: url("../img/reviews-sketch-desktop@2x.png");
@@ -49,7 +50,6 @@
   justify-content: flex-start;
   flex-wrap: wrap;
 }
-
 
 .reviews__photo-block {
   margin-right: 40px;
