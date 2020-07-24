@@ -22,7 +22,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   width: 480px;
-  height: 521px;
+  min-height: 521px;
   padding: 56px 48px 40px 48px;
   background: #ffffff;
   border-radius: 8px;
@@ -54,6 +54,7 @@
   padding: 0;
   top: 28px;
   right: 31px;
+  cursor: pointer;
 
   &::after,
   &::before {
@@ -166,6 +167,7 @@ input.input--invalid + label::before {
   font-size: 13px;
   line-height: 19px;
   opacity: 0.74;
+  cursor: pointer;
 
   &::before {
     content: "";
