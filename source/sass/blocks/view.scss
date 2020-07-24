@@ -67,14 +67,15 @@
 @media (max-width: $mobile-width) {
   .view {
     padding-top: 31px;
-    background-image: url("../img/mobile/view-watercolor-mobile@1x.jpg"), linear-gradient(to top, #ffffff 237px, lightgray 237px);
+    padding-bottom: 29px;
+    background-image: url("../img/mobile/view-watercolor-mobile@1x.jpg"), linear-gradient(to bottom, lightgray 237px, #ffffff 237px);
 
     @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
-      background-image: url("../img/mobile/view-watercolor-mobile@2x.jpg"), linear-gradient(to top, #ffffff 237px, lightgray 237px);
+      background-image: url("../img/mobile/view-watercolor-mobile@2x.jpg"), linear-gradient(to bottom, lightgray 237px, #ffffff 237px);
     }
 
     background-position: calc(50% + 86px) 74px;
-    background-size: 632px, 630px;
+    background-size: 632px;
   }
 
   .view__wrapper {
