@@ -33,10 +33,6 @@
   text-shadow: $text-shadow;
 }
 
-.view__description br {
-  display: none;
-}
-
 .view__button {
   display: flex;
   width: auto;
@@ -101,10 +97,6 @@
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 61px;
-  }
-
-  .view__description br {
-    display: block;
   }
 
   .view__button {
