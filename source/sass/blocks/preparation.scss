@@ -4,13 +4,13 @@
   margin: 0 auto;
   padding-top: 162px;
   padding-bottom: 154px;
-  background-image: url("../img/preparation-watercolor@1x.png");
+  background-image: url("../img/desktop/preparation-watercolor@1x.png");
   background-position: center -38px;
   background-repeat: no-repeat;
   background-size: 100%;
 
   @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
-    background-image: url("../img/preparation-watercolor@2x.png");
+    background-image: url("../img/desktop/preparation-watercolor@2x.png");
   }
 
   &::after {
@@ -20,12 +20,12 @@
     right: 0;
     width: 217px;
     height: 235px;
-    background-image: url("../img/preparation-stamp-desktop@1x.png");
+    background-image: url("../img/desktop/preparation-stamp-desktop@1x.png");
     background-repeat: no-repeat;
     background-size: contain;
 
     @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
-      background-image: url("../img/preparation-stamp-desktop@2x.png");
+      background-image: url("../img/desktop/preparation-stamp-desktop@2x.png");
     }
   }
 }
@@ -176,10 +176,10 @@
 
     &::after {
       top: 276px;
-      background-image: url("../img/preparation-stamp-mobile@1x.png");
+      background-image: url("../img/mobile/preparation-stamp-mobile@1x.png");
 
       @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
-        background-image: url("../img/preparation-stamp-mobile@2x.png");
+        background-image: url("../img/mobile/preparation-stamp-mobile@2x.png");
       }
     }
   }

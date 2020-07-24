@@ -1,5 +1,5 @@
 .programs {
-  background-image: url("../img/programs-city-desktop@1x.png");
+  background-image: url("../img/desktop/programs-city-desktop@1x.png");
   background-repeat: no-repeat;
   background-position: top right;
   background-size: 680px 426px;
@@ -9,7 +9,7 @@
   margin-right: auto;
 
   @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
-    background-image: url("../img/programs-city-desktop@2x.png");
+    background-image: url("../img/desktop/programs-city-desktop@2x.png");
   }
 }
 
@@ -46,13 +46,13 @@
 
 @media (max-width: $mobile-width) {
   .programs {
-    background-image: url("../img/programs-city-mobile@1x.png");
+    background-image: url("../img/mobile/programs-city-mobile@1x.png");
     padding-bottom: 30px;
     background-position: right 165px;
     background-size: 296px 201px;
 
     @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
-      background-image: url("../img/programs-city-mobile@2x.png");
+      background-image: url("../img/mobile/programs-city-mobile@2x.png");
     }
   }
 

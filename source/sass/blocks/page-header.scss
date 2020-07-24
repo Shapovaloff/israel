@@ -1,17 +1,18 @@
 .page-header {
   max-width: 1366px;
   margin: 0 auto;
-  padding-bottom: calc(14% - 2px);
+  padding-bottom: 190px;
   height: 100%;
-  background-image: url("../img/header-bg-desktop@1x.png");
+  background-image: url("../img/desktop/header-bg-desktop@1x.jpg");
+  background-color: rgba($color-black, 0.2);
 
   @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
-    background-image: url("../img/header-bg-desktop@2x.png");
+    background-image: url("../img/desktop/header-bg-desktop@2x.jpg");
   }
 
   background-position: center top;
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: cover;
 }
 
 .page-header__wrapper {
@@ -26,13 +27,18 @@
   justify-content: space-between;
   align-items: center;
   padding-top: 28px;
-  margin-bottom: calc(40% - 5px);
+  margin-bottom: calc(40% - 7px);
 }
 
 .page-header__logo {
   order: 1;
-  margin-top: 2px;
-  margin-right: 25px;
+  margin-top: 4px;
+  margin-right: 22px;
+}
+
+.page-header__logo-img {
+  width: 137px;
+  height: 48px;
 }
 
 .page-header__phone {
@@ -138,6 +144,10 @@
 }
 
 @media (max-width: $tablet-width) {
+  .page-header {
+    padding-bottom: 130px;
+  }
+
   .page-header__wrapper {
     padding-left: 40px;
     padding-right: 40px;
@@ -151,14 +161,15 @@
 @media (max-width: $mobile-width) {
   .page-header {
     min-height: 605px;
-    background-image: url("../img/header-bg-mobile@1x.png");
+    padding-bottom: 114px;
+    background-image: url("../img/mobile/header-bg-mobile@1x.jpg"), linear-gradient(to bottom, #ffffff 80px, rgba($color-black, 0.2) 80px);
 
     @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
-      background-image: url("../img/header-bg-mobile@2x.png");
+      background-image: url("../img/mobile/header-bg-mobile@2x.jpg"), linear-gradient(to bottom, #ffffff 80px, rgba($color-black, 0.2) 80px);
     }
 
     background-size: cover;
-    background-position: center 32px;
+    background-position: center 35px, top center;
   }
 
   .page-header__wrapper {
@@ -167,10 +178,10 @@
   }
 
   .page-header__nav {
-    padding-top: 21px;
+    padding-top: 23px;
     flex-direction: column;
     align-items: flex-end;
-    margin-bottom: 272px;
+    margin-bottom: 273px;
   }
 
   .page-header__logo {
@@ -181,7 +192,12 @@
     margin-right: 0;
     position: absolute;
     left: 7px;
-    top: 21px;
+    top: 23px;
+  }
+
+  .page-header__logo-img {
+    width: 120px;
+    height: 42px;
   }
 
   .page-header__phone {

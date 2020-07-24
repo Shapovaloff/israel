@@ -94,9 +94,7 @@
 
 .controls__item:hover:not(.controls__item--active) .controls__button,
 .controls__item:focus:not(.controls__item--active) .controls__button {
-  background: $gradient;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: $color-yellow;
 
   &::after {
     background-position-y: -87px;

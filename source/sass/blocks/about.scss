@@ -1,12 +1,12 @@
 .about {
   padding-bottom: 95px;
-  background-image: url("../img/about-programs-watercolor-desktop@1x.png");
+  background-image: url("../img/desktop/about-programs-watercolor-desktop@1x.png");
   background-repeat: no-repeat;
   background-size: 1366px 604px;
   background-position: center 160px;
 
   @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
-    background-image: url("../img/about-programs-watercolor-desktop@2x.png");
+    background-image: url("../img/desktop/about-programs-watercolor-desktop@2x.png");
   }
 }
 
@@ -113,10 +113,10 @@
     padding-bottom: 0;
     background-size: 420px 186px;
     background-position: center 227px;
-    background-image: url("../img/about-programs-watercolor-mobile@1x.png");
+    background-image: url("../img/mobile/about-programs-watercolor-mobile@1x.png");
 
     @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
-      background-image: url("../img/about-programs-watercolor-mobile@2x.png");
+      background-image: url("../img/mobile/about-programs-watercolor-mobile@2x.png");
     }
   }
 

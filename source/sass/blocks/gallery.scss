@@ -2,14 +2,14 @@
   position: relative;
   max-width: 1366px;
   margin: 0 auto;
-  background-image: url("../img/gallery-watercolor-desktop@1x.png");
+  background-image: url("../img/desktop/gallery-watercolor-desktop@1x.png");
   background-position: center -44px;
   background-repeat: no-repeat;
   background-size: 100%;
   padding-bottom: 96px;
 
   @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
-    background-image: url("../img/gallery-watercolor-desktop@2x.png");
+    background-image: url("../img/desktop/gallery-watercolor-desktop@2x.png");
   }
 
   &::before {
@@ -19,10 +19,10 @@
     right: 0;
     width: 97px;
     height: 148px;
-    background-image: url("../img/gallery-watch-desktop@1x.png");
+    background-image: url("../img/desktop/gallery-watch-desktop@1x.png");
 
     @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
-      background-image: url("../img/gallery-watch-desktop@2x.png");
+      background-image: url("../img/desktop/gallery-watch-desktop@2x.png");
     }
 
     background-size: contain;
@@ -116,6 +116,7 @@
 
   &--excursions {
     left: 40px;
+    bottom: -2px;
   }
 
   &--stady {
@@ -192,7 +193,7 @@
 
   .gallery__description {
     padding-left: 16px;
-    padding-right: 12px;
+    padding-right: 30px;
     margin-bottom: 28px;
     text-align: left;
     font-size: 16px;
@@ -224,6 +225,10 @@
     text-align: center;
     left: 50%;
     transform: translateX(-50%);
+
+    &--excursions {
+      bottom: 33px;
+    }
   }
 
   .gallery__dots {
