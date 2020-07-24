@@ -340,9 +340,9 @@
     if (programsTabs) {
       mySwiper = new window.Swiper(programsTabs, {
         direction: 'horizontal',
-        slidesPerView: 1.7,
-        centeredSlides: true,
-        spaceBetween: 30,
+        slidesPerView: 'auto',
+        freeMode: true,
+        spaceBetween: 0,
         grabCursor: true,
         pagination: {
           clickable: true,

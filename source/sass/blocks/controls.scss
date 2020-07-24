@@ -20,6 +20,7 @@
 .controls__button {
   position: relative;
   min-height: 68px;
+  min-width: 228px;
   width: 100%;
   padding: 23px 40px 25px 72px;
   font: inherit;
@@ -119,6 +120,7 @@
 
   .controls__item {
     border-radius: 60px;
+    width: auto;
 
     &--active {
       background-image: $gradient;
