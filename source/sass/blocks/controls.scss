@@ -1,6 +1,5 @@
 .controls {
   @include reset-list;
-  width: 228px;
   height: auto;
   display: block;
   box-sizing: border-box;
@@ -22,7 +21,7 @@
   position: relative;
   min-height: 68px;
   width: 100%;
-  padding: 23px 10px 25px 72px;
+  padding: 23px 40px 25px 72px;
   font: inherit;
   line-height: 18px;
   border: none;
